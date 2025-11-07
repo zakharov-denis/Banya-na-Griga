@@ -91,9 +91,9 @@ export function CookieConsent() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="fixed bottom-0 left-0 right-0 sm:bottom-4 sm:right-4 sm:left-auto z-50 p-4"
+            className="fixed bottom-4 left-0 right-0 z-50 p-4"
           >
-            <div className="max-w-[380px] mx-auto sm:mx-0 sm:ml-auto">
+            <div className="max-w-[380px] mx-auto">
               <div className="relative bg-[#F5F0E8]/70 backdrop-blur-[10px] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.1)] p-3 sm:p-4">
                 <button
                   onClick={() => setShowBanner(false)}

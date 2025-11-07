@@ -26,15 +26,12 @@ export function CookieConsent() {
   const [preferences, setPreferences] = useState<CookiePreferences>(defaultPreferences);
 
   useEffect(() => {
-    // Check if user has already consented
     const consent = localStorage.getItem('banya-cookie-consent');
     const consentDate = localStorage.getItem('banya-cookie-consent-date');
     
     if (!consent) {
-      // Show banner after a short delay for smooth entrance
       setTimeout(() => setShowBanner(true), 2000);
     } else {
-      // Check if consent is older than 6 months
       if (consentDate) {
         const sixMonthsAgo = new Date();
         sixMonthsAgo.setMonth(sixMonthsAgo.getMonth() - 6);
@@ -45,12 +42,10 @@ export function CookieConsent() {
         }
       }
       
-      // Load saved preferences
       try {
         const savedPreferences = JSON.parse(consent);
         setPreferences({ ...defaultPreferences, ...savedPreferences });
       } catch (e) {
-        // If parsing fails, show banner again
         setTimeout(() => setShowBanner(true), 1000);
       }
     }
@@ -67,10 +62,6 @@ export function CookieConsent() {
     saveConsent(allAccepted);
   };
 
-  const handleRejectNonEssential = () => {
-    saveConsent(defaultPreferences);
-  };
-
   const handleSavePreferences = () => {
     saveConsent(preferences);
     setShowModal(false);
@@ -84,7 +75,7 @@ export function CookieConsent() {
   };
 
   const togglePreference = (key: keyof CookiePreferences) => {
-    if (key === 'essential') return; // Essential cookies cannot be disabled
+    if (key === 'essential') return;
     setPreferences(prev => ({
       ...prev,
       [key]: !prev[key],
@@ -93,7 +84,6 @@ export function CookieConsent() {
 
   return (
     <>
-      {/* Cookie Banner */}
       <AnimatePresence>
         {showBanner && (
           <motion.div
@@ -104,42 +94,28 @@ export function CookieConsent() {
             className="fixed bottom-0 left-0 right-0 sm:bottom-4 sm:right-4 sm:left-auto z-50 p-4"
           >
             <div className="max-w-[380px] mx-auto sm:mx-0 sm:ml-auto">
-              <div className="bg-[#F5F0E8]/70 backdrop-blur-[10px] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.1)] p-3 sm:p-4">
+              <div className="relative bg-[#F5F0E8]/70 backdrop-blur-[10px] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.1)] p-3 sm:p-4">
+                <button
+                  onClick={() => setShowBanner(false)}
+                  className="absolute top-2 right-2 w-6 h-6 rounded-full hover:bg-[#E4D7C4]/50 flex items-center justify-center transition-colors duration-200 z-10"
+                >
+                  <X className="w-4 h-4 text-[#3D3226]" />
+                </button>
                 <div className="flex items-start gap-2 sm:gap-3">
-                  {/* Cookie Icon */}
                   <div className="flex-shrink-0 text-xl sm:text-2xl mt-0.5">
                     🍪
                   </div>
-
-                  {/* Content */}
                   <div className="flex-1 min-w-0">
                     <p className="text-[#3D3226] text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
                       Мы ценим вашу конфиденциальность. Используем cookie для улучшения вашего опыта и персонализации предложений.
                     </p>
-
-                    {/* Actions */}
-                    <div className="flex flex-col gap-2">
+                    <div className="flex justify-center">
                       <Button
                         onClick={handleAcceptAll}
-                        className="w-full bg-gradient-to-r from-[#d8b272] to-[#c59f6d] text-white hover:from-[#c5a061] hover:to-[#b38e5c] shadow-sm transition-all duration-300 rounded-lg h-8 sm:h-9 text-xs sm:text-sm"
+                        className="bg-gradient-to-r from-[#d8b272] to-[#c59f6d] text-white hover:from-[#c5a061] hover:to-[#b38e5c] shadow-sm transition-all duration-300 rounded-lg h-8 sm:h-9 text-xs sm:text-sm px-8"
                       >
                         Принять все
                       </Button>
-                      <div className="flex flex-col sm:flex-row gap-2">
-                        <Button
-                          onClick={handleRejectNonEssential}
-                          variant="outline"
-                          className="flex-1 border border-[#e4d7c4] text-[#705b36] hover:bg-[#F5E6D3]/30 hover:border-[#d8b272] rounded-lg h-8 sm:h-9 text-xs sm:text-sm transition-all duration-300 whitespace-normal leading-tight py-1.5 sm:py-2"
-                        >
-                          Отклонить необязательные
-                        </Button>
-                        <button
-                          onClick={() => setShowModal(true)}
-                          className="text-[#b08f5e] hover:text-[#705b36] text-xs sm:text-sm underline underline-offset-2 transition-colors duration-300 px-2 py-1.5 sm:py-0"
-                        >
-                          Настроить
-                        </button>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -149,11 +125,9 @@ export function CookieConsent() {
         )}
       </AnimatePresence>
 
-      {/* Customization Modal */}
       <AnimatePresence>
         {showModal && (
           <>
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -163,7 +137,6 @@ export function CookieConsent() {
               onClick={() => setShowModal(false)}
             />
 
-            {/* Modal */}
             <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -172,7 +145,6 @@ export function CookieConsent() {
                 transition={{ duration: 0.4, ease: 'easeOut' }}
                 className="bg-white rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto pointer-events-auto border-2 border-[#D4AF37]/20"
               >
-                {/* Header */}
                 <div className="sticky top-0 bg-white border-b border-[#F5E6D3] p-6 rounded-t-3xl z-10">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-3">
@@ -190,13 +162,11 @@ export function CookieConsent() {
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6 space-y-6">
                   <p className="text-[#3D3226]/70">
                     Управляйте настройками файлов cookie ниже. Необходимые cookie требуются для работы сайта и не могут быть отключены.
                   </p>
 
-                  {/* Essential Cookies */}
                   <CookieCategory
                     icon={<Shield className="w-5 h-5" />}
                     title="Необходимые Cookie"
@@ -206,7 +176,6 @@ export function CookieConsent() {
                     locked
                   />
 
-                  {/* Performance Cookies */}
                   <CookieCategory
                     icon={<Cookie className="w-5 h-5" />}
                     title="Cookie производительности"
@@ -215,7 +184,6 @@ export function CookieConsent() {
                     onToggle={() => togglePreference('performance')}
                   />
 
-                  {/* Functional Cookies */}
                   <CookieCategory
                     icon={<Settings className="w-5 h-5" />}
                     title="Функциональные Cookie"
@@ -224,7 +192,6 @@ export function CookieConsent() {
                     onToggle={() => togglePreference('functional')}
                   />
 
-                  {/* Analytics Cookies */}
                   <CookieCategory
                     icon={<Cookie className="w-5 h-5" />}
                     title="Аналитические Cookie"
@@ -233,7 +200,6 @@ export function CookieConsent() {
                     onToggle={() => togglePreference('analytics')}
                   />
 
-                  {/* Marketing Cookies */}
                   <CookieCategory
                     icon={<Cookie className="w-5 h-5" />}
                     title="Маркетинговые Cookie"
@@ -243,7 +209,6 @@ export function CookieConsent() {
                   />
                 </div>
 
-                {/* Footer */}
                 <div className="sticky bottom-0 bg-gradient-to-t from-white via-white to-transparent border-t border-[#F5E6D3] p-6 rounded-b-3xl">
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button

@@ -28,7 +28,11 @@ export function CookieConsent() {
   useEffect(() => {
     const consent = localStorage.getItem('banya-cookie-consent');
     const consentDate = localStorage.getItem('banya-cookie-consent-date');
-    
+
+    // Temporarily force show for testing
+    setTimeout(() => setShowBanner(true), 1000);
+
+    /* Original logic - commented for testing
     if (!consent) {
       setTimeout(() => setShowBanner(true), 2000);
     } else {
@@ -49,6 +53,7 @@ export function CookieConsent() {
         setTimeout(() => setShowBanner(true), 1000);
       }
     }
+    */
   }, []);
 
   const handleAcceptAll = () => {
@@ -91,9 +96,9 @@ export function CookieConsent() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
             transition={{ duration: 0.5, ease: 'easeInOut' }}
-            className="fixed bottom-4 left-0 right-0 z-50 p-4"
+            className="fixed bottom-4 left-4 z-50 w-full max-w-[380px]"
           >
-            <div className="max-w-[380px] mx-auto">
+            <div className="w-full">
               <div className="relative bg-[#F5F0E8]/70 backdrop-blur-[10px] rounded-2xl shadow-[0_4px_12px_rgba(0,0,0,0.1)] p-3 sm:p-4">
                 <button
                   onClick={() => setShowBanner(false)}
@@ -172,7 +177,7 @@ export function CookieConsent() {
                     title="Необходимые Cookie"
                     description="Требуются для базовой функциональности сайта, безопасности и аутентификации пользователей. Не могут быть отключены."
                     enabled={preferences.essential}
-                    onToggle={() => {}}
+                    onToggle={() => { }}
                     locked
                   />
 

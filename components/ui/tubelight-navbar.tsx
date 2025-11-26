@@ -18,12 +18,13 @@ interface NavBarProps {
   secondaryCta?: React.ReactNode
   onNavigateToAbout?: () => void
   onNavigateToBlogs?: () => void
+  onNavigateToCareers?: () => void
   onNavigateToHome?: () => void
   onNavigateToHomeWithScroll?: (sectionId?: string) => void
   currentPage?: string
 }
 
-export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateToAbout, onNavigateToBlogs, onNavigateToHome, onNavigateToHomeWithScroll, currentPage }: NavBarProps) {
+export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateToAbout, onNavigateToBlogs, onNavigateToCareers, onNavigateToHome, onNavigateToHomeWithScroll, currentPage }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0].name)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -34,9 +35,9 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
     } else if (currentPage === 'about-us') {
       setActiveTab('О нас')
     } else if (currentPage === 'blogs') {
-      setActiveTab('Блоги')
+      setActiveTab('Новости')
     } else if (currentPage === 'vacancies') {
-      setActiveTab('Главная') // Keep home highlighted for vacancies
+      setActiveTab('Вакансии')
     } else if (currentPage === 'pricing') {
       setActiveTab('Главная') // Keep home highlighted for pricing
     }
@@ -59,7 +60,7 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
     e.preventDefault()
     setActiveTab(item.name)
     setIsMobileMenuOpen(false)
-    
+
     // Handle Home navigation - always navigate to Home page
     if (item.name === 'Home' || item.name === 'Главная') {
       if (currentPage !== 'home') {
@@ -75,7 +76,7 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
       }
       return
     }
-    
+
     // Handle About Us navigation - always navigate to About page
     if (item.name === 'About Us' || item.name === 'О нас') {
       if (onNavigateToAbout) {
@@ -83,15 +84,25 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
       }
       return
     }
-    
+
+
     // Handle Blogs navigation - always navigate to Blogs page
-    if (item.name === 'Blogs' || item.name === 'Блоги') {
+    if (item.name === 'Blogs' || item.name === 'Блоги' || item.name === 'Новости') {
       if (onNavigateToBlogs) {
         onNavigateToBlogs()
       }
       return
     }
-    
+
+
+    // Handle Vacancies navigation - always navigate to Vacancies page
+    if (item.name === 'Vacancies' || item.name === 'Вакансии') {
+      if (onNavigateToCareers) {
+        onNavigateToCareers()
+      }
+      return
+    }
+
     // Handle section links (Services, Gallery, Contact, etc.)
     if (currentPage === 'home') {
       // We're on home page, just scroll to section
@@ -148,9 +159,9 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
                 }}
                 className="flex items-center group"
               >
-                <img 
-                  src="https://i.ibb.co/JWJ913Vb/5204071771186266480-removebg-preview.png" 
-                  alt="Banya Logo" 
+                <img
+                  src="https://i.ibb.co/JWJ913Vb/5204071771186266480-removebg-preview.png"
+                  alt="Banya Logo"
                   className="h-10 sm:h-11 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
               </a>
@@ -171,9 +182,13 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
                       "relative cursor-pointer px-4 md:px-5 lg:px-6 py-2.5 rounded-full transition-all duration-300",
                       "text-[#3D3226] hover:text-[#7A5C47]",
                       isActive && "text-[#7A5C47]",
+                      // Special styling for Vacancies item - button-like appearance
+                      item.name === 'Вакансии' && "border-2 border-[#D4A574] bg-transparent hover:bg-[#D4A574]/10 shadow-sm hover:shadow-md hover:scale-105",
                     )}
                   >
-                    <span className="text-sm relative z-10 whitespace-nowrap">{item.name}</span>
+                    <span className="text-sm relative z-10 whitespace-nowrap">
+                      {item.name}
+                    </span>
                     {isActive && (
                       <motion.div
                         layoutId="lamp"
@@ -189,7 +204,7 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
                         }}
                       >
                         {/* Tubelight glow effect - top */}
-                        <div 
+                        <div
                           className="absolute -top-2 left-1/2 -translate-x-1/2 w-12 h-1.5 rounded-t-full"
                           style={{
                             background: 'linear-gradient(90deg, #D4A574 0%, #C69563 100%)',
@@ -197,19 +212,19 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
                           }}
                         >
                           {/* Outer glow rings */}
-                          <div 
+                          <div
                             className="absolute w-16 h-8 rounded-full blur-lg -top-3 -left-2"
                             style={{
                               background: 'radial-gradient(circle, rgba(212, 165, 116, 0.3) 0%, transparent 70%)',
                             }}
                           />
-                          <div 
+                          <div
                             className="absolute w-12 h-6 rounded-full blur-md -top-2"
                             style={{
                               background: 'radial-gradient(circle, rgba(212, 165, 116, 0.25) 0%, transparent 70%)',
                             }}
                           />
-                          <div 
+                          <div
                             className="absolute w-6 h-5 rounded-full blur-sm top-0 left-3"
                             style={{
                               background: 'radial-gradient(circle, rgba(198, 149, 99, 0.2) 0%, transparent 70%)',
@@ -238,6 +253,8 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
                       "relative cursor-pointer px-2.5 py-2 rounded-full transition-all duration-300",
                       "text-[#3D3226] hover:text-[#7A5C47]",
                       isActive && "text-[#7A5C47]",
+                      // Special styling for Vacancies item
+                      item.name === 'Вакансии' && "border-2 border-[#D4A574] bg-transparent hover:bg-[#D4A574]/10 shadow-sm hover:shadow-md hover:scale-105",
                     )}
                   >
                     <span className="relative z-10">
@@ -258,14 +275,14 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
                         }}
                       >
                         {/* Tubelight glow effect - top */}
-                        <div 
+                        <div
                           className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-10 h-1 rounded-t-full"
                           style={{
                             background: 'linear-gradient(90deg, #D4A574 0%, #C69563 100%)',
                             boxShadow: '0 0 6px rgba(212, 165, 116, 0.6), 0 0 12px rgba(198, 149, 99, 0.4)',
                           }}
                         >
-                          <div 
+                          <div
                             className="absolute w-12 h-6 rounded-full blur-md -top-2 -left-1"
                             style={{
                               background: 'radial-gradient(circle, rgba(212, 165, 116, 0.25) 0%, transparent 70%)',
@@ -293,14 +310,14 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
                 )}
               </button>
             </div>
-            
+
             {/* Secondary CTA Button - Desktop & Tablet */}
             {secondaryCta && (
               <div className="flex-shrink-0 hidden sm:block">
                 {secondaryCta}
               </div>
             )}
-            
+
             {/* CTA Button - Desktop & Tablet */}
             {ctaButton && (
               <div className="flex-shrink-0 hidden sm:block">
@@ -343,9 +360,11 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
                         className={cn(
                           "flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-300",
                           "text-[#3D3226] hover:text-[#7A5C47]",
-                          isActive 
-                            ? "bg-gradient-to-r from-[#E8DFD5]/70 to-[#F5EFE6]/60 text-[#7A5C47]" 
-                            : "hover:bg-[#E8DFD5]/30"
+                          isActive
+                            ? "bg-gradient-to-r from-[#E8DFD5]/70 to-[#F5EFE6]/60 text-[#7A5C47]"
+                            : "hover:bg-[#E8DFD5]/30",
+                          // Special styling for Vacancies item - button-like appearance
+                          item.name === 'Вакансии' && "border-2 border-[#D4A574] bg-transparent hover:bg-[#D4A574]/10 shadow-sm"
                         )}
                       >
                         <Icon size={20} strokeWidth={2.5} />
@@ -353,7 +372,7 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
                       </motion.a>
                     )
                   })}
-                  
+
                   {/* Mobile Secondary CTA Button */}
                   {secondaryCta && (
                     <motion.div
@@ -365,7 +384,7 @@ export function NavBar({ items, className, ctaButton, secondaryCta, onNavigateTo
                       {secondaryCta}
                     </motion.div>
                   )}
-                  
+
                   {/* Mobile CTA Button */}
                   {ctaButton && (
                     <motion.div

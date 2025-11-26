@@ -20,6 +20,7 @@ import { PricingPage } from '../components/PricingPage';
 import { BlogsPage } from '../components/BlogsPage';
 import { RequestQuoteModal } from '../components/RequestQuoteModal';
 import { CancellationPolicyPage } from '../components/CancellationPolicyPage';
+import { VKWidgetModal } from '../components/VKWidgetModal';
 import { Toaster } from '../components/ui/sonner';
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
   });
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
   const [selectedPackageType, setSelectedPackageType] = useState('');
+  const [isVKWidgetOpen, setIsVKWidgetOpen] = useState(false);
 
   // Handle scrolling to sections after navigation
   useEffect(() => {
@@ -89,16 +91,16 @@ export default function App() {
       {/* Conditional Page Rendering */}
       {currentPage === 'home' ? (
         <>
-          <Header 
+          <Header
             onNavigateToCareers={() => setCurrentPage('vacancies')}
             onNavigateToAbout={() => setCurrentPage('about-us')}
-            onNavigateToBlogs={() => setCurrentPage('blogs')}
+            onNavigateToBlogs={() => setIsVKWidgetOpen(true)}
             onNavigateToHome={() => setCurrentPage('home')}
             onBookSession={handleBookSession}
             onNavigateToHomeWithScroll={handleNavigateToHomeWithScroll}
             currentPage={currentPage}
           />
-          <Hero 
+          <Hero
             backgroundImage="https://images.unsplash.com/photo-1755610146287-2dcdbec596b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMHN0ZWFtJTIwd29vZHxlbnwxfHx8fDE3NjE5MzAxNTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
             onBookSession={handleBookSession}
           />
@@ -111,14 +113,14 @@ export default function App() {
           <TestimonialsSection />
           <FAQSection />
           <ContactSection onBookSession={handleBookSession} />
-          <Footer 
+          <Footer
             onNavigateToCareers={() => setCurrentPage('vacancies')}
             onOpenLegalDoc={(docType) => setLegalDocOpen({ isOpen: true, docType })}
             onOpenCancellationPolicy={() => setCurrentPage('cancellation')}
           />
         </>
       ) : currentPage === 'vacancies' ? (
-        <VacanciesPage 
+        <VacanciesPage
           onNavigateToHome={() => setCurrentPage('home')}
           onNavigateToHomeWithScroll={handleNavigateToHomeWithScroll}
           onNavigateToAbout={() => setCurrentPage('about-us')}
@@ -126,7 +128,7 @@ export default function App() {
           onBookSession={handleBookSession}
         />
       ) : currentPage === 'pricing' ? (
-        <PricingPage 
+        <PricingPage
           onNavigateToHome={() => setCurrentPage('home')}
           onNavigateToHomeWithScroll={handleNavigateToHomeWithScroll}
           onNavigateToAbout={() => setCurrentPage('about-us')}
@@ -139,7 +141,7 @@ export default function App() {
           }}
         />
       ) : currentPage === 'blogs' ? (
-        <BlogsPage 
+        <BlogsPage
           onNavigateToHome={() => setCurrentPage('home')}
           onNavigateToHomeWithScroll={handleNavigateToHomeWithScroll}
           onNavigateToAbout={() => setCurrentPage('about-us')}
@@ -149,7 +151,7 @@ export default function App() {
       ) : currentPage === 'cancellation' ? (
         <CancellationPolicyPage onClose={() => setCurrentPage('home')} />
       ) : (
-        <AboutUsPage 
+        <AboutUsPage
           onNavigateToHome={() => setCurrentPage('home')}
           onBookSession={handleBookFromAbout}
           onNavigateToCareers={() => setCurrentPage('vacancies')}
@@ -158,7 +160,7 @@ export default function App() {
       )}
 
       {/* Booking Widget Modal */}
-      <BookingWidget 
+      <BookingWidget
         isOpen={isBookingOpen}
         onClose={() => {
           setIsBookingOpen(false);
@@ -187,6 +189,12 @@ export default function App() {
         isOpen={isQuoteModalOpen}
         onClose={() => setIsQuoteModalOpen(false)}
         packageType={selectedPackageType}
+      />
+
+      {/* VK Widget Modal */}
+      <VKWidgetModal
+        isOpen={isVKWidgetOpen}
+        onClose={() => setIsVKWidgetOpen(false)}
       />
 
       {/* Toast Notifications */}

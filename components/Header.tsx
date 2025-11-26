@@ -19,8 +19,8 @@ export function Header({ onNavigateToCareers, onNavigateToAbout, onNavigateToBlo
   const navItems = [
     { name: 'Главная', url: '#home', icon: HomeIcon },
     { name: 'Услуги', url: '#services', icon: Package },
-    { name: 'Новости', url: '#blogs', icon: Newspaper },
     { name: 'Галерея', url: '#gallery', icon: Image },
+    { name: 'Новости', url: '#blogs', icon: Newspaper },
     { name: 'О нас', url: '#about', icon: User },
     { name: 'Контакты', url: '#contact', icon: Mail },
     { name: 'Вакансии', url: '#vacancies', icon: Briefcase },

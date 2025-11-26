@@ -74,26 +74,40 @@ export function PromotionsSection() {
 
           {/* Headline */}
           <h2 className="text-[#3D3226] mb-3 sm:mb-4 text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-2">
-            🔥 Зимнее Wellness-предложение — скидка 20% на все банные сессии!
+            🔥 Специальные цены для детей!
           </h2>
 
           {/* Subtext */}
           <p className="text-[#6B4D3A] mb-6 sm:mb-8 text-base sm:text-lg md:text-xl max-w-3xl mx-auto px-4">
-            Ограниченное предложение. Согрейте свою зиму чистым расслаблением.
+            Отдыхайте всей семьёй с выгодой
           </p>
+
+          {/* Pricing Info */}
+          <div className="mb-6 sm:mb-8 space-y-3 sm:space-y-4 max-w-2xl mx-auto">
+            <div className="bg-white/30 backdrop-blur-sm rounded-2xl p-4 sm:p-6">
+              <p className="text-[#3D3226] text-lg sm:text-xl md:text-2xl font-semibold">
+                Дети до 7 лет — бесплатно
+              </p>
+            </div>
+            <div className="bg-white/30 backdrop-blur-sm rounded-2xl p-4 sm:p-6">
+              <p className="text-[#3D3226] text-lg sm:text-xl md:text-2xl font-semibold">
+                Дети с 7 до 14 лет — 200 ₽/час
+              </p>
+            </div>
+          </div>
 
           {/* CTA Button */}
           <div className="mb-4 sm:mb-6">
             <Button
               className="w-full sm:w-auto bg-[#6B4D3A] hover:bg-[#5A3D2A] text-white rounded-full px-8 sm:px-12 py-5 sm:py-7 text-base sm:text-lg shadow-2xl hover:shadow-xl transition-all hover:scale-105"
             >
-              Получить предложение
+              Забронировать
             </Button>
           </div>
 
-          {/* Validity Date */}
+          {/* Additional Info */}
           <p className="text-[#8B7761] text-xs sm:text-sm">
-            Предложение действует до 31 декабря 2025 г.
+            Приведите детей и наслаждайтесь семейным отдыхом
           </p>
         </motion.div>
       </div>

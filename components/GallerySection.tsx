@@ -34,9 +34,8 @@ export function GallerySection() {
     };
   }, []);
 
-  // Full gallery - all 22 images
+  // Full gallery - all images
   // Изображения хранятся локально в папке public/images/gallery/
-  // Добавьте ваши изображения в эту папку и обновите пути ниже
   const allGalleryImages = [
     '/images/gallery/gallery-01.jpg',
     '/images/gallery/gallery-02.jpg',
@@ -60,18 +59,61 @@ export function GallerySection() {
     '/images/gallery/gallery-20.png',
     '/images/gallery/gallery-21.png',
     '/images/gallery/gallery-22.png',
+    '/images/gallery/troika-7-hero.jpg',
+    '/images/gallery/troika-7.jpg',
+    '/images/gallery/Баня .JPG',
+    '/images/gallery/Баня 1.JPG',
+    '/images/gallery/Баня 2.JPG',
+    '/images/gallery/Баня 3.JPG',
+    '/images/gallery/Баня 4.JPG',
+    '/images/gallery/Женское отделение.JPG',
+    '/images/gallery/Женское.JPG',
+    '/images/gallery/Вывеска Баня на грига .JPG',
+    '/images/gallery/Раздевалка.JPG',
+    '/images/gallery/Раздевалка 2.JPG',
+    '/images/gallery/Табличка на входе.JPG',
+    '/images/gallery/Зона отдыха.JPG',
+    '/images/gallery/тройка.JPG',
+    '/images/gallery/тройка 2.JPG',
+    '/images/gallery/тройка 3.JPG',
+    '/images/gallery/тройка 4.JPG',
+    '/images/gallery/тройка 5.JPG',
+    '/images/gallery/тройка 6.JPG',
+    '/images/gallery/Холл 2.JPG',
+    '/images/gallery/холл.JPG',
+    '/images/gallery/Столы.JPG',
+    '/images/gallery/Столы 2.JPG',
+    '/images/gallery/столы 3.JPG',
+    '/images/gallery/бар.JPG',
+    '/images/gallery/веники.JPG',
+    '/images/gallery/Тройка печь.JPG',
+    '/images/gallery/Тройка 8.JPG',
+    '/images/gallery/Тройка  бассейн.JPG',
+    '/images/gallery/Тройка  бассейн 2.JPG',
+    '/images/gallery/Тройка 7 hero.JPG',
+    '/images/gallery/баня на верху.JPG',
+    '/images/gallery/Печь.JPG',
+    '/images/gallery/главная.JPG',
+    '/images/gallery/glavnaya.jpg',
   ];
 
-  // Slider preview - only show 8 best images for fast loading
+  // Slider preview - only show best images for fast loading
   const sliderPreviewImages = [
+    '/images/gallery/troika-7-hero.jpg',
     '/images/gallery/gallery-01.jpg',
+    '/images/gallery/Баня 1.JPG',
     '/images/gallery/gallery-04.jpg',
+    '/images/gallery/Баня 2.JPG',
     '/images/gallery/gallery-06.jpg',
-    '/images/gallery/gallery-07.jpg',
+    '/images/gallery/troika-7.jpg',
     '/images/gallery/gallery-09.jpg',
+    '/images/gallery/Баня 3.JPG',
     '/images/gallery/gallery-11.png',
-    '/images/gallery/gallery-14.png',
-    '/images/gallery/gallery-15.png',
+    '/images/gallery/Тройка  бассейн.JPG',
+    '/images/gallery/главная.JPG',
+    '/images/gallery/холл.JPG',
+    '/images/gallery/Зона отдыха.JPG',
+    '/images/gallery/бар.JPG',
   ];
 
   return (

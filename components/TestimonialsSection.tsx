@@ -354,9 +354,9 @@ export function TestimonialsSection() {
               <div className="text-center">
                 <div className="flex items-center justify-center gap-1.5 mb-1">
                   <Edit3 className="w-5 h-5 text-[#D4A574]" />
-                  <span className="text-3xl text-[#3D3226]" style={{ fontFamily: 'Georgia, serif' }}>421</span>
+                  <span className="text-3xl text-[#3D3226]" style={{ fontFamily: 'Georgia, serif' }}>56</span>
                 </div>
-                <p className="text-[#7A5C47] text-xs sm:text-sm">Всего отзывов</p>
+                <p className="text-[#7A5C47] text-xs sm:text-sm">Лет Опыта</p>
               </div>
 
               {/* Total Ratings */}
@@ -454,24 +454,24 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="grid lg:grid-cols-3 gap-4 max-w-6xl mx-auto"
         >
-          {/* Google Reviews Button */}
+          {/* Yandex Reviews Button */}
           <div className="lg:col-span-2">
             <div className="bg-gradient-to-br from-white to-[#FFF9F1] rounded-2xl p-5 sm:p-6 shadow-[0_4px_20px_rgba(203,163,90,0.1)] hover:shadow-[0_8px_30px_rgba(203,163,90,0.2)] transition-all duration-300 h-full flex flex-col justify-center">
               <div className="flex items-center justify-between gap-4">
                 <div className="flex-1">
                   <h3 className="text-[#3D3226] mb-2 text-lg sm:text-xl">
-                    Смотрите все наши отзывы
+                    Смотрите все наши отзывы на Яндексе
                   </h3>
                   <p className="text-[#7A5C47] mb-4 text-sm">
-                    Читайте больше отзывов наших гостей в Google Reviews.
+                    Читайте больше отзывов наших гостей на Яндекс Картах.
                   </p>
-                  <a 
-                    href="https://www.google.com/maps/search/?api=1&query=Griga+Street+58,+Kaliningrad,+Russia"
+                  <a
+                    href="https://yandex.ru/maps/org/banya_na_griga/1123825340/reviews/?ll=20.529900%2C54.715629&z=16"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#D4A574] to-[#CBA35A] text-white rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 text-sm"
                   >
-                    <span>Читать на Google</span>
+                    <span>Читать на Яндексе</span>
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
@@ -482,19 +482,21 @@ export function TestimonialsSection() {
           {/* Write Review Section */}
           <div className="bg-gradient-to-br from-[#3D3226] to-[#7A5C47] rounded-2xl p-5 sm:p-6 shadow-[0_4px_20px_rgba(61,50,38,0.3)] text-white flex flex-col items-center justify-center text-center">
             <div className="w-12 h-12 bg-[#CBA35A] rounded-full flex items-center justify-center mb-3 shadow-lg">
-              <QrCode className="w-6 h-6 text-white" />
+              <Edit3 className="w-6 h-6 text-white" />
             </div>
             <h4 className="text-white mb-2 text-base sm:text-lg">Поделитесь впечатлениями</h4>
             <p className="text-[#E8DFD5] text-xs sm:text-sm leading-relaxed mb-3">
               Будем рады узнать о вашем визите!
             </p>
-            <button
-              onClick={() => setIsReviewModalOpen(true)}
+            <a
+              href="https://yandex.ru/maps/org/banya_na_griga/1123825340/reviews/?add-review=true&ll=20.529900%2C54.715629&z=16"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-[#3D3226] rounded-full hover:bg-[#FAF7F2] transition-all duration-300 hover:scale-105 shadow-md text-sm"
             >
               <Edit3 className="w-4 h-4" />
-              <span>Написать отзыв</span>
-            </button>
+              <span>Написать отзыв на Яндексе</span>
+            </a>
           </div>
         </motion.div>
       </div>

@@ -106,22 +106,22 @@ export function CookieConsent() {
                 >
                   <X className="w-4 h-4 text-[#3D3226]" />
                 </button>
-                <div className="flex items-start gap-2 sm:gap-3">
-                  <div className="flex-shrink-0 text-xl sm:text-2xl mt-0.5">
-                    🍪
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-[#3D3226] text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
+                <div className="text-center">
+                  <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
+                    <div className="text-xl sm:text-2xl">
+                      🍪
+                    </div>
+                    <p className="text-[#3D3226] text-xs sm:text-sm leading-relaxed">
                       Мы ценим вашу конфиденциальность. Используем cookie для улучшения вашего опыта и персонализации предложений.
                     </p>
-                    <div className="flex justify-center">
-                      <Button
-                        onClick={handleAcceptAll}
-                        className="bg-gradient-to-r from-[#d8b272] to-[#c59f6d] text-white hover:from-[#c5a061] hover:to-[#b38e5c] shadow-sm transition-all duration-300 rounded-lg h-8 sm:h-9 text-xs sm:text-sm px-8"
-                      >
-                        Принять все
-                      </Button>
-                    </div>
+                  </div>
+                  <div className="flex justify-center">
+                    <Button
+                      onClick={handleAcceptAll}
+                      className="bg-gradient-to-r from-[#d8b272] to-[#c59f6d] text-white hover:from-[#c5a061] hover:to-[#b38e5c] shadow-sm transition-all duration-300 rounded-lg h-8 sm:h-9 text-xs sm:text-sm px-8"
+                    >
+                      Принять все
+                    </Button>
                   </div>
                 </div>
               </div>

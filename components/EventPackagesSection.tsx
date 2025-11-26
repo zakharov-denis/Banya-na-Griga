@@ -64,7 +64,7 @@ export function EventPackagesSection({ onRequestQuote }: EventPackagesSectionPro
       groupSize: '10-25 человек',
       price: 'Запросить цену',
       isGiftable: false,
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80',
+      image: '/images/gallery/Баня 1.JPG',
     },
     {
       id: 'birthday',
@@ -82,7 +82,7 @@ export function EventPackagesSection({ onRequestQuote }: EventPackagesSectionPro
       groupSize: 'До 12 человек',
       price: 'От 15 000 ₽',
       isGiftable: true,
-      image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80',
+      image: '/images/gallery/Баня 2.JPG',
     },
     {
       id: 'stag',
@@ -100,7 +100,7 @@ export function EventPackagesSection({ onRequestQuote }: EventPackagesSectionPro
       groupSize: '8-15 человек',
       price: 'От 20 000 ₽',
       isGiftable: false,
-      image: 'https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80',
+      image: '/images/gallery/troika-7.jpg',
     },
     {
       id: 'wellness',
@@ -118,7 +118,7 @@ export function EventPackagesSection({ onRequestQuote }: EventPackagesSectionPro
       groupSize: '4-10 человек',
       price: 'От 25 000 ₽',
       isGiftable: true,
-      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
+      image: '/images/gallery/Баня 3.JPG',
     },
   ];
 

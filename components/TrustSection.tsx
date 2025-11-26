@@ -1,6 +1,6 @@
 'use client';
 
-import { Sparkles, Droplets, Flame, Bird, Flower2, Sun } from 'lucide-react';
+import { Flame, Heart, Leaf, Circle, Users, Sparkles, Droplets, Shield, Home } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 
@@ -33,28 +33,40 @@ export function TrustSection() {
 
   const badges = [
     {
-      icon: Sparkles,
-      title: '100% Настоящая баня',
+      icon: Home,
+      title: 'Настоящая баня на дровах',
     },
     {
-      icon: Droplets,
-      title: 'Сертифицированный wellness',
+      icon: Shield,
+      title: 'Проверенные оздоровительные процедуры',
     },
     {
       icon: Flame,
-      title: 'Премиум технология жара',
+      title: 'Правильный жар',
     },
     {
-      icon: Bird,
-      title: 'Гарантия релаксации',
+      icon: Heart,
+      title: 'Настоящий отдых для головы и тела',
     },
     {
-      icon: Flower2,
-      title: 'Чистые травяные эссенции',
+      icon: Leaf,
+      title: 'Натуральные травы',
     },
     {
-      icon: Sun,
-      title: 'Восстановление энергии',
+      icon: Sparkles,
+      title: 'Восстановление сил',
+    },
+    {
+      icon: Droplets,
+      title: 'Пар от опытного банщика',
+    },
+    {
+      icon: Users,
+      title: 'Спокойная семейная атмосфера',
+    },
+    {
+      icon: Circle,
+      title: 'Идеальная чистота',
     },
   ];
 
@@ -90,7 +102,7 @@ export function TrustSection() {
             }}
             transition={{
               x: {
-                duration: 13,
+                duration: 23.4,
                 repeat: Infinity,
                 ease: 'linear',
                 repeatType: 'loop',
@@ -108,41 +120,45 @@ export function TrustSection() {
                   className="flex-shrink-0 group"
                 >
                   {/* Circular Badge Container */}
-                  <div className="flex flex-col items-center justify-center">
-                    {/* Circle with Icon */}
-                    <div
-                      className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl"
-                      style={{
-                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 247, 242, 0.7) 100%)',
-                        backdropFilter: 'blur(12px)',
-                        boxShadow: '0 6px 24px rgba(212, 165, 116, 0.18), 0 3px 10px rgba(122, 92, 71, 0.1)',
-                      }}
-                    >
-                      {/* Subtle glow effect */}
-                      <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#D4A574]/25 to-[#C9A87C]/25 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      
-                      {/* Inner circle with gradient */}
+                  <div className="flex flex-col items-center justify-start h-full">
+                    {/* Circle with Icon - Fixed height container */}
+                    <div className="flex items-center justify-center" style={{ height: '128px' }}>
                       <div
-                        className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 rounded-full flex items-center justify-center relative z-10"
+                        className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:shadow-2xl"
                         style={{
-                          background: 'linear-gradient(135deg, #D4A574 0%, #C9A87C 100%)',
-                          boxShadow: '0 3px 14px rgba(212, 165, 116, 0.35)',
+                          background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 247, 242, 0.7) 100%)',
+                          backdropFilter: 'blur(12px)',
+                          boxShadow: '0 6px 24px rgba(212, 165, 116, 0.18), 0 3px 10px rgba(122, 92, 71, 0.1)',
                         }}
                       >
-                        <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 text-white" strokeWidth={1.5} />
-                      </div>
+                        {/* Subtle glow effect */}
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#D4A574]/25 to-[#C9A87C]/25 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                      {/* Decorative ring */}
-                      <div className="absolute inset-0 rounded-full border border-[#D4A574]/20 group-hover:border-[#D4A574]/40 transition-colors duration-500" />
+                        {/* Inner circle with gradient */}
+                        <div
+                          className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 rounded-full flex items-center justify-center relative z-10"
+                          style={{
+                            background: 'linear-gradient(135deg, #D4A574 0%, #C9A87C 100%)',
+                            boxShadow: '0 3px 14px rgba(212, 165, 116, 0.35)',
+                          }}
+                        >
+                          <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 text-white" strokeWidth={1.5} />
+                        </div>
+
+                        {/* Decorative ring */}
+                        <div className="absolute inset-0 rounded-full border border-[#D4A574]/20 group-hover:border-[#D4A574]/40 transition-colors duration-500" />
+                      </div>
                     </div>
 
-                    {/* Badge Title */}
-                    <p
-                      className="mt-4 sm:mt-5 md:mt-6 text-[#3D3226] text-xs sm:text-sm md:text-base text-center max-w-[120px] sm:max-w-[140px] md:max-w-[160px] leading-snug"
-                      style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
-                    >
-                      {badge.title}
-                    </p>
+                    {/* Badge Title - Fixed height container for consistent alignment */}
+                    <div className="flex items-start justify-center mt-4 sm:mt-5 md:mt-6" style={{ minHeight: '60px' }}>
+                      <p
+                        className="text-[#3D3226] text-xs sm:text-sm md:text-base text-center max-w-[120px] sm:max-w-[140px] md:max-w-[160px] leading-snug"
+                        style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}
+                      >
+                        {badge.title}
+                      </p>
+                    </div>
                   </div>
                 </div>
               );

@@ -101,7 +101,7 @@ export default function App() {
             currentPage={currentPage}
           />
           <Hero
-            backgroundImage="https://images.unsplash.com/photo-1755610146287-2dcdbec596b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMHN0ZWFtJTIwd29vZHxlbnwxfHx8fDE3NjE5MzAxNTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            backgroundImage="/images/gallery/glavnaya.jpg"
             onBookSession={handleBookSession}
           />
           <TrustSection />

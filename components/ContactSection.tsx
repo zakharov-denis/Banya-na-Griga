@@ -1,13 +1,13 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { motion } from 'motion/react';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Copy, 
+import { motion, AnimatePresence } from 'motion/react';
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Copy,
   Check,
   Car,
   Train,
@@ -16,6 +16,7 @@ import {
   Calendar
 } from 'lucide-react';
 import { Button } from './ui/button';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 
 interface ContactSectionProps {
   onBookSession?: () => void;
@@ -24,7 +25,10 @@ interface ContactSectionProps {
 export function ContactSection({ onBookSession }: ContactSectionProps) {
   const [copiedAddress, setCopiedAddress] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0); // 0 = map, 1 = parking photo
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const autoPlayTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const contactInfo = {
     address: 'улица Грига, 58, Калининград, Россия, 236016',
@@ -61,6 +65,34 @@ export function ContactSection({ onBookSession }: ContactSectionProps) {
 
     return () => observer.disconnect();
   }, []);
+
+  // Auto-play slider
+  useEffect(() => {
+    if (!isAutoPlaying) return;
+
+    autoPlayTimerRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+    }, 4500); // 4.5 seconds
+
+    return () => {
+      if (autoPlayTimerRef.current) {
+        clearInterval(autoPlayTimerRef.current);
+      }
+    };
+  }, [isAutoPlaying]);
+
+  const handleDotClick = (index: number) => {
+    setIsAutoPlaying(false);
+    setCurrentSlide(index);
+
+    // Resume auto-play after 10 seconds
+    if (autoPlayTimerRef.current) {
+      clearInterval(autoPlayTimerRef.current);
+    }
+    setTimeout(() => {
+      setIsAutoPlaying(true);
+    }, 10000);
+  };
 
   const handleCopyAddress = async () => {
     try {
@@ -141,7 +173,7 @@ export function ContactSection({ onBookSession }: ContactSectionProps) {
 
         {/* Two Column Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Left Column - Map */}
+          {/* Left Column - Map/Parking Slider */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
@@ -150,32 +182,87 @@ export function ContactSection({ onBookSession }: ContactSectionProps) {
           >
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#D4A574] to-[#CBA35A] rounded-3xl opacity-20 blur group-hover:opacity-30 transition-opacity duration-300" />
-              <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl">
-                <iframe
-                  src={contactInfo.mapUrl}
-                  width="100%"
-                  height="500"
-                  style={{ border: 0 }}
-                  allowFullScreen
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-[400px] sm:h-[500px]"
-                  title="Расположение бани"
+              <div className="relative bg-white rounded-3xl overflow-hidden shadow-xl h-[400px] sm:h-[500px]">
+                <AnimatePresence mode="wait">
+                  {currentSlide === 0 ? (
+                    <motion.div
+                      key="map"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.8, ease: 'easeInOut' }}
+                      className="absolute inset-0"
+                    >
+                      <iframe
+                        src={contactInfo.mapUrl}
+                        width="100%"
+                        height="500"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                        className="w-full h-full"
+                        title="Расположение бани"
+                      />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="parking"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.8, ease: 'easeInOut' }}
+                      className="absolute inset-0"
+                    >
+                      <ImageWithFallback
+                        src="/images/gallery/Вывеска Баня на грига .JPG"
+                        alt="Парковка и территория"
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Navigation Dots */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-3 z-10">
+                <button
+                  onClick={() => handleDotClick(0)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === 0
+                      ? 'bg-white w-8'
+                      : 'bg-white/50 hover:bg-white/70'
+                  }`}
+                  aria-label="Показать карту"
+                />
+                <button
+                  onClick={() => handleDotClick(1)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === 1
+                      ? 'bg-white w-8'
+                      : 'bg-white/50 hover:bg-white/70'
+                  }`}
+                  aria-label="Показать парковку"
                 />
               </div>
-              
-              {/* See on Map Button Overlay */}
-              <motion.a
-                href={contactInfo.directionsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-                className="absolute bottom-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#D4A574] to-[#CBA35A] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <Navigation className="w-5 h-5" />
-                <span>Показать на карте</span>
-              </motion.a>
+
+              {/* See on Map Button Overlay - Only show on map slide */}
+              {currentSlide === 0 && (
+                <motion.a
+                  href={contactInfo.directionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="absolute top-6 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#D4A574] to-[#CBA35A] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <Navigation className="w-5 h-5" />
+                  <span>Показать на карте</span>
+                </motion.a>
+              )}
             </div>
 
             {/* Book Session Button */}

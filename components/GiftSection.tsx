@@ -89,21 +89,17 @@ export function GiftSection() {
             </div>
 
             <h2 className="text-[#3D3226] text-3xl sm:text-4xl lg:text-5xl xl:text-6xl">
-              Подарите впечатления от wellness.
+              Подарите впечатления от русской бани.
             </h2>
 
             <p className="text-[#8B7761] text-base sm:text-lg leading-relaxed">
-              Удивите близких подарочным сертификатом Banya Haven — идеальный подарок для расслабления и обновления. Подарите спокойствие, здоровье и незабываемые моменты.
+              Удивите близких подарочным сертификатом — идеальный подарок для расслабления и обновления. Подарите спокойствие, здоровье и незабываемые моменты.
             </p>
 
             <div className="space-y-3 sm:space-y-4 pt-2 sm:pt-4">
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-[#7A5C47] rounded-full flex-shrink-0" />
                 <span className="text-[#3D3226] text-sm sm:text-base">Действует на все услуги и пакеты</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-[#7A5C47] rounded-full flex-shrink-0" />
-                <span className="text-[#3D3226] text-sm sm:text-base">Без срока действия</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-2 h-2 bg-[#7A5C47] rounded-full flex-shrink-0" />

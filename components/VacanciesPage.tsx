@@ -2,15 +2,11 @@
 
 import { useState } from 'react';
 import { Header } from './Header';
-import { VacanciesHero } from './vacancies/VacanciesHero';
 import { QuickStats } from './vacancies/QuickStats';
 import { OpenPositions } from './vacancies/OpenPositions';
 import { RoleDetailsModal } from './vacancies/RoleDetailsModal';
 import { AgencyPanel } from './vacancies/AgencyPanel';
-import { ApplicationForm } from './vacancies/ApplicationForm';
-import { RequirementsSection } from './vacancies/RequirementsSection';
 import { InterviewTimeline } from './vacancies/InterviewTimeline';
-import { FAQ } from './vacancies/FAQ';
 import { FooterCTA } from './vacancies/FooterCTA';
 import { Toaster } from './ui/sonner';
 
@@ -65,9 +61,6 @@ export function VacanciesPage({ onNavigateToHome, onNavigateToHomeWithScroll, on
         currentPage="vacancies"
       />
       
-      {/* Hero Section */}
-      <VacanciesHero />
-
       {/* Quick Stats */}
       <QuickStats />
 
@@ -77,17 +70,8 @@ export function VacanciesPage({ onNavigateToHome, onNavigateToHomeWithScroll, on
       {/* Agency Panel */}
       <AgencyPanel />
 
-      {/* Application Form */}
-      <ApplicationForm />
-
-      {/* Requirements & Interview Questions */}
-      <RequirementsSection />
-
       {/* Interview Timeline */}
       <InterviewTimeline />
-
-      {/* FAQ */}
-      <FAQ />
 
       {/* Footer CTA */}
       <FooterCTA />

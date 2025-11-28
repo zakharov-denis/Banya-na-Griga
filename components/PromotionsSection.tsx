@@ -5,7 +5,11 @@ import { useEffect, useState } from 'react';
 import { Button } from './ui/button';
 import { Flame } from 'lucide-react';
 
-export function PromotionsSection() {
+interface PromotionsSectionProps {
+  onBookSession?: () => void;
+}
+
+export function PromotionsSection({ onBookSession }: PromotionsSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -99,6 +103,7 @@ export function PromotionsSection() {
           {/* CTA Button */}
           <div className="mb-4 sm:mb-6">
             <Button
+              onClick={onBookSession}
               className="w-full sm:w-auto bg-[#6B4D3A] hover:bg-[#5A3D2A] text-white rounded-full px-8 sm:px-12 py-5 sm:py-7 text-base sm:text-lg shadow-2xl hover:shadow-xl transition-all hover:scale-105"
             >
               Забронировать

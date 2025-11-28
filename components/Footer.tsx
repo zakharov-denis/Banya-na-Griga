@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { MapPin, Phone, Mail, Instagram, Facebook, MapPinned } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageSquare, MapPinned } from 'lucide-react';
 
 interface FooterProps {
   onNavigateToCareers?: () => void;
@@ -13,7 +13,6 @@ export function Footer({ onNavigateToCareers, onOpenLegalDoc, onOpenCancellation
   const quickLinks = [
     { label: 'Главная', href: '#home', isExternal: false },
     { label: 'Услуги', href: '#services', isExternal: false },
-    { label: 'Цены', href: '#pricing', isExternal: false },
     { label: 'Галерея', href: '#gallery', isExternal: false },
     { label: 'О нас', href: '#about', isExternal: false },
     { label: 'Контакты', href: '#contact', isExternal: false },
@@ -56,8 +55,8 @@ export function Footer({ onNavigateToCareers, onOpenLegalDoc, onOpenCancellation
                 </h3>
               </div>
               <p className="text-[#E8DFD5] leading-relaxed text-sm sm:text-base">
-                Ваш оазис аутентичной русской бани и велнес-ритуалов. 
-                Испытайте идеальное сочетание древних традиций и современного к��мфорта.
+              Настоящая русская баня с атмосферой старинных ритуалов. 
+              Попробуйте идеальное единство привычного уюта и проверенных временем практик.
               </p>
             </motion.div>
           </div>
@@ -135,25 +134,20 @@ export function Footer({ onNavigateToCareers, onOpenLegalDoc, onOpenCancellation
               {/* Social Icons */}
               <div className="flex space-x-3 sm:space-x-4 mt-4 sm:mt-6">
                 <a
-                  href="#"
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#D4A574] transition-all duration-300 group"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-[#E8DFD5] group-hover:text-white transition-colors" />
-                </a>
-                <a
-                  href="#"
-                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#D4A574] transition-all duration-300 group"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-4 h-4 sm:w-5 sm:h-5 text-[#E8DFD5] group-hover:text-white transition-colors" />
-                </a>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Griga+Street+58,+Kaliningrad,+Russia"
+                  href="https://vk.com/club234208867"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#D4A574] transition-all duration-300 group"
-                  aria-label="Google Maps"
+                  aria-label="VK"
+                >
+                  <span className="text-[#E8DFD5] group-hover:text-white transition-colors text-xs sm:text-sm font-semibold">VK</span>
+                </a>
+                <a
+                  href="https://yandex.ru/maps/org/banya_na_griga/1123825340/?ll=20.529900%2C54.715629&z=16"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#D4A574] transition-all duration-300 group"
+                  aria-label="Отзывы Яндекс"
                 >
                   <MapPinned className="w-4 h-4 sm:w-5 sm:h-5 text-[#E8DFD5] group-hover:text-white transition-colors" />
                 </a>

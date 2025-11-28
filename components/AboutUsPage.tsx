@@ -44,7 +44,7 @@ export function AboutUsPage({ onNavigateToHome, onBookSession, onNavigateToCaree
 
   const timeline = [
     {
-      year: '1901',
+      year: '1971',
       title: 'Открытие',
       description: 'Открылась первая общественная баня в Калининграде. Место, где жители впервые получили возможность по-настоящему отдохнуть и восстановиться в жаркой парной.',
       icon: Sparkles,

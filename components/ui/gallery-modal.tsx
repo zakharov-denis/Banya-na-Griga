@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { OptimizedImage } from './OptimizedImage';
 
 interface GalleryModalProps {
   isOpen: boolean;
@@ -14,6 +15,7 @@ export function GalleryModal({ isOpen, onClose, images }: GalleryModalProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
 
   // Preload first few images for faster display
   useEffect(() => {
@@ -101,29 +103,35 @@ export function GalleryModal({ isOpen, onClose, images }: GalleryModalProps) {
 
             {/* Gallery Grid */}
             <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-              {images.map((image, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ 
-                    duration: 0.3, 
-                    delay: Math.min(index * 0.015, 0.5),
-                    ease: 'easeOut'
-                  }}
-                  className="aspect-square rounded-xl overflow-hidden cursor-pointer group relative"
-                  onClick={() => openLightbox(image, index)}
-                >
-                  <img
-                    src={image}
-                    alt={`Фото галереи ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading={index < 8 ? 'eager' : 'lazy'}
-                    decoding="async"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
-              ))}
+              {images
+                .filter((image) => !failedImages.has(image))
+                .map((image, index) => {
+                  const originalIndex = images.indexOf(image);
+                  return (
+                    <motion.div
+                      key={originalIndex}
+                      initial={{ opacity: 0, scale: 0.95 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ 
+                        duration: 0.3, 
+                        delay: Math.min(index * 0.015, 0.5),
+                        ease: 'easeOut'
+                      }}
+                      className="aspect-square rounded-xl overflow-hidden cursor-pointer group relative"
+                      onClick={() => openLightbox(image, originalIndex)}
+                    >
+                      <OptimizedImage
+                        src={image}
+                        alt={`Фото галереи ${originalIndex + 1}`}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        loading={index < 12 ? 'eager' : 'lazy'}
+                        priority={index < 8}
+                        onError={() => setFailedImages(prev => new Set([...prev, image]))}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    </motion.div>
+                  );
+                })}
             </div>
           </div>
 
@@ -166,19 +174,23 @@ export function GalleryModal({ isOpen, onClose, images }: GalleryModalProps) {
                   <ChevronRight className="w-6 h-6 text-white" />
                 </button>
 
-                <motion.img
+                <motion.div
                   key={selectedImage}
                   initial={{ scale: 0.95, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.95, opacity: 0 }}
                   transition={{ duration: 0.2, ease: 'easeOut' }}
-                  src={selectedImage}
-                  alt="Выбранное фото"
-                  className="max-w-full max-h-[90vh] object-contain rounded-lg"
                   onClick={(e) => e.stopPropagation()}
-                  loading="eager"
-                  decoding="async"
-                />
+                  className="max-w-full max-h-[90vh]"
+                >
+                  <OptimizedImage
+                    src={selectedImage}
+                    alt="Выбранное фото"
+                    className="max-w-full max-h-[90vh] object-contain rounded-lg"
+                    loading="eager"
+                    priority={true}
+                  />
+                </motion.div>
 
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-sm backdrop-blur-sm bg-black/30 px-4 py-2 rounded-full">
                   {selectedIndex + 1} / {images.length}

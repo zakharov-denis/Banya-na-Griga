@@ -1,4 +1,5 @@
 import React from 'react';
+import { OptimizedImage } from './OptimizedImage';
 
 interface ImageAutoSliderProps {
   images?: string[];
@@ -89,13 +90,12 @@ export const ImageAutoSlider: React.FC<ImageAutoSliderProps> = ({
                   key={index}
                   className={`image-item flex-shrink-0 ${imageSize.mobile} ${imageSize.tablet} ${imageSize.desktop} rounded-xl overflow-hidden shadow-2xl bg-[#3D3226]/20`}
                 >
-                  <img
+                  <OptimizedImage
                     src={image}
                     alt={`Gallery image ${(index % images.length) + 1}`}
                     className="w-full h-full object-cover"
                     loading={index < 4 ? "eager" : "lazy"}
-                    decoding="async"
-                    fetchPriority={index < 2 ? "high" : "low"}
+                    priority={index < 2}
                   />
                 </div>
               ))}

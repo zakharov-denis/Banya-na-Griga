@@ -44,10 +44,7 @@ export function FooterCTA() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               onClick={() => {
-                const applySection = document.querySelector('#apply');
-                if (applySection) {
-                  applySection.scrollIntoView({ behavior: 'smooth' });
-                }
+                window.location.href = 'mailto:griga58@yandex.ru?subject=Запрос о вакансиях';
               }}
               className="w-full sm:w-auto bg-gradient-to-r from-[#D4A574] to-[#C69563] hover:from-[#C69563] hover:to-[#B8865A] text-white rounded-full px-10 py-6 gap-2 transition-all duration-300 hover:scale-105"
               style={{ fontSize: '1rem' }}
@@ -58,7 +55,7 @@ export function FooterCTA() {
 
             <Button
               onClick={() => {
-                window.location.href = 'mailto:hiring@banyahaven.com?subject=Запрос о найме&utm_source=vacancies-page&utm_medium=footer-cta';
+                window.location.href = 'mailto:griga58@yandex.ru?subject=Запрос о найме';
               }}
               variant="outline"
               className="w-full sm:w-auto border-2 border-[#D4A574] text-[#7A5C47] hover:bg-white rounded-full px-10 py-6 gap-2 transition-all duration-300 hover:scale-105"
@@ -76,10 +73,10 @@ export function FooterCTA() {
               <div className="text-center sm:text-left">
                 <p className="text-sm text-[#7A5C47]/70 mb-1">Для агентств и массовых заявок</p>
                 <a 
-                  href="mailto:hiring@banyahaven.com?utm_source=vacancies-page&utm_medium=footer-cta" 
+                  href="mailto:griga58@yandex.ru?subject=Заявка от агентства" 
                   className="text-[#C69563] hover:underline"
                 >
-                  hiring@banyahaven.com
+                  griga58@yandex.ru
                 </a>
               </div>
             </div>

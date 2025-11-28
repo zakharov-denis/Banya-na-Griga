@@ -58,52 +58,6 @@ const positions = [
     shifts: 'Сменный график (6:00-14:00, 14:00-22:00)',
     salary: '45 000 - 65 000 ₽/месяц',
   },
-  {
-    id: 3,
-    title: 'Массажист',
-    type: 'Договор',
-    location: 'Калининград',
-    summary: 'Лицензированные терапевты для массажа после бани и оздоровительных процедур.',
-    badges: ['Требуется сертификат'],
-    description: 'Мы ищем опытных массажистов для оказания премиальных оздоровительных услуг нашим гостям.',
-    responsibilities: [
-      'Выполнение различных техник массажа',
-      'Адаптация процедур под потребности гостей',
-      'Поддержание чистоты массажного кабинета',
-      'Рекомендация оздоровительных пакетов',
-    ],
-    requirements: [
-      'Действующий сертификат массажиста',
-      'Опыт работы от 2+ лет',
-      'Знание шведского, глубокого тканевого массажа, ароматерапии',
-      'Отличные навыки межличностного общения',
-    ],
-    shifts: 'Гибкий график',
-    salary: '55 000 - 90 000 ₽/месяц + чаевые',
-  },
-  {
-    id: 4,
-    title: 'Администратор',
-    type: 'Полная занятость',
-    location: 'Калининград',
-    summary: 'Работа с гостями, бронирование и поддержка с теплым гостеприимством.',
-    badges: ['Срочный найм', 'Через агентство'],
-    description: 'Станьте гостеприимным лицом Баня Хейвен, управляя бронированиями и запросами гостей.',
-    responsibilities: [
-      'Управление телефонными и онлайн-бронированиями',
-      'Встреча и регистрация гостей',
-      'Обработка платежей и ведение записей',
-      'Ответы на вопросы гостей об услугах',
-    ],
-    requirements: [
-      'Предыдущий опыт администратора или в гостиничном бизнесе',
-      'Владение русским и английским языками',
-      'Компьютерная грамотность',
-      'Дружелюбное и профессиональное поведение',
-    ],
-    shifts: 'Дневные смены (9:00-18:00)',
-    salary: '50 000 - 70 000 ₽/месяц',
-  },
 ];
 
 interface OpenPositionsProps {
@@ -195,8 +149,6 @@ export function OpenPositions({ onViewDetails }: OpenPositionsProps) {
                 <SelectItem value="all">Все роли</SelectItem>
                 <SelectItem value="уборщик">Уборщик и техобслуживание</SelectItem>
                 <SelectItem value="банщик">Банщик</SelectItem>
-                <SelectItem value="массажист">Массажист</SelectItem>
-                <SelectItem value="администратор">Администратор</SelectItem>
               </SelectContent>
             </Select>
 
@@ -352,10 +304,7 @@ export function OpenPositions({ onViewDetails }: OpenPositionsProps) {
                   <div className="flex flex-col sm:flex-row gap-3 mt-auto">
                     <Button
                       onClick={() => {
-                        const applySection = document.querySelector('#apply');
-                        if (applySection) {
-                          applySection.scrollIntoView({ behavior: 'smooth' });
-                        }
+                        window.location.href = 'mailto:griga58@yandex.ru?subject=Заявка на вакансию: ' + encodeURIComponent(position.title);
                       }}
                       className="flex-1 h-11 bg-gradient-to-r from-[#D4A574] to-[#C69563] hover:from-[#C69563] hover:to-[#B8865A] text-white rounded-full transition-all duration-200"
                     >

@@ -22,6 +22,7 @@ import { RequestQuoteModal } from '../components/RequestQuoteModal';
 import { CancellationPolicyPage } from '../components/CancellationPolicyPage';
 import { VKWidgetModal } from '../components/VKWidgetModal';
 import { Toaster } from '../components/ui/sonner';
+import { openYClientsWidget } from './utils/yclients';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'vacancies' | 'about-us' | 'pricing' | 'blogs' | 'cancellation'>('home');
@@ -63,10 +64,10 @@ export default function App() {
   };
 
   const handleBookFromAbout = () => {
-    setShouldHighlightFirst(true);
-    setIsBookingOpen(true);
-    // Reset highlight flag after opening
-    setTimeout(() => setShouldHighlightFirst(false), 100);
+    // Open YClients widget
+    setTimeout(() => {
+      openYClientsWidget();
+    }, 100);
   };
 
   const handleRequestQuote = (packageType: string) => {
@@ -74,16 +75,12 @@ export default function App() {
     setIsQuoteModalOpen(true);
   };
 
-  // Global booking handler - works from any page
+  // Global booking handler - opens YClients widget
   const handleBookSession = () => {
-    // If not on home page, navigate to home first
-    if (currentPage !== 'home') {
-      setCurrentPage('home');
-      // Small delay to let page render before opening modal
-      setTimeout(() => setIsBookingOpen(true), 300);
-    } else {
-      setIsBookingOpen(true);
-    }
+    // Wait a bit for YClients script to initialize, then open widget
+    setTimeout(() => {
+      openYClientsWidget();
+    }, 100);
   };
 
   return (
@@ -109,7 +106,7 @@ export default function App() {
           <EventPackagesSection onRequestQuote={handleRequestQuote} />
           <GallerySection />
           <GiftSection />
-          <PromotionsSection />
+          <PromotionsSection onBookSession={handleBookSession} />
           <TestimonialsSection />
           <FAQSection />
           <ContactSection onBookSession={handleBookSession} />
@@ -134,10 +131,11 @@ export default function App() {
           onNavigateToAbout={() => setCurrentPage('about-us')}
           onNavigateToBlogs={() => setCurrentPage('blogs')}
           onNavigateToCareers={() => setCurrentPage('vacancies')}
-          onBookNow={(saunaType) => {
-            setCurrentPage('home');
-            setIsBookingOpen(true);
-            // You can use saunaType to pre-select in booking widget if needed
+          onBookNow={() => {
+            // Open YClients widget
+            setTimeout(() => {
+              openYClientsWidget();
+            }, 100);
           }}
         />
       ) : currentPage === 'blogs' ? (

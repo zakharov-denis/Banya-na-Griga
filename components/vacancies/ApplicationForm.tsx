@@ -148,8 +148,6 @@ export function ApplicationForm() {
                         <SelectContent>
                           <SelectItem value="cleaning">Уборщик и техобслуживание</SelectItem>
                           <SelectItem value="sauna">Банщик</SelectItem>
-                          <SelectItem value="massage">Массажист</SelectItem>
-                          <SelectItem value="reception">Администратор</SelectItem>
                         </SelectContent>
                       </Select>
                     </div>

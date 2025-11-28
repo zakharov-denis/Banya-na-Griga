@@ -60,8 +60,8 @@ export function GiftSection() {
           >
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1759887244219-17c3d64a7f01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnaWZ0JTIwY2FyZCUyMGx1eHVyeXxlbnwxfHx8fDE3NjE5MzAzNTB8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Gift card"
+                src="/images/technical/banya-na-griga-podarochnyi.png"
+                alt="Подарочный сертификат Баня на Грига"
                 className="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-[#7A5C47]/30 to-transparent" />
@@ -109,6 +109,9 @@ export function GiftSection() {
 
             <div className="pt-4 sm:pt-6">
               <Button
+                onClick={() => {
+                  window.location.href = 'mailto:griga58@yandex.ru?subject=Запрос на подарочный сертификат';
+                }}
                 className="w-full sm:w-auto bg-[#7A5C47] hover:bg-[#6B4D3A] text-white rounded-full px-8 sm:px-10 py-5 sm:py-7 text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105"
               >
                 Получить подарочный сертификат

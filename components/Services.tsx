@@ -45,17 +45,7 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
         { name: 'Общая баня (муж/жен)', price: '800 ₽', duration: 'с человека' },
         { name: 'Душ', price: '300 ₽', duration: 'за час' },
       ],
-      image: 'https://images.unsplash.com/photo-1755610146287-2dcdbec596b6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMHN0ZWFtJTIwd29vZHxlbnwxfHx8fDE3NjE5MzAxNTh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
-    },
-    {
-      title: 'Специальные тарифы',
-      icon: '👥',
-      services: [
-        { name: 'Пенсионеры и инвалиды (Ср–Чт)', price: '600 ₽', duration: '2 часа' },
-        { name: 'Пенсионеры и инвалиды (Пт–Вс)', price: '800 ₽', duration: '2 часа' },
-        { name: 'Дети (7–14 лет)', price: '200 ₽', duration: '2 часа' },
-      ],
-      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
+      image: '/images/technical/banya-pech.jpg',
     },
     {
       title: 'Сауны',
@@ -65,7 +55,7 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
         { name: 'Сауна с купелью (до 3 чел)', price: '2000 ₽', duration: '2 часа' },
         { name: 'Компактная сауна (3–4 чел)', price: '1800 ₽', duration: '2 часа' },
       ],
-      image: 'https://images.unsplash.com/photo-1583417657209-d3dd44dc9c09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdGVhbSUyMHJvb20lMjBzcGF8ZW58MXx8fHwxNzYxOTE1MzIzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/images/technical/hero-vertikalno.jpg',
     },
     {
       title: 'Дополнительные удобства',
@@ -77,7 +67,17 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
         { name: 'Аренда халата', price: '300 ₽', duration: '' },
         { name: 'Аренда банной шапки', price: '100 ₽', duration: '' },
       ],
-      image: 'https://images.unsplash.com/photo-1737352777897-e22953991a32?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcGElMjBtYXNzYWdlJTIwdGhlcmFweXxlbnwxfHx8fDE3NjE4MzE4NTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: '/images/technical/massazhnoe-kreslo.jpg',
+    },
+    {
+      title: 'Специальные тарифы',
+      icon: '👥',
+      services: [
+        { name: 'Пенсионеры и инвалиды (Ср–Чт)', price: '600 ₽', duration: '2 часа' },
+        { name: 'Пенсионеры и инвалиды (Пт–Вс)', price: '800 ₽', duration: '2 часа' },
+        { name: 'Дети (7–14 лет)', price: '200 ₽', duration: '2 часа' },
+      ],
+      image: 'https://images.unsplash.com/photo-1727169704910-0c60b67dd59e?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
   ];
 

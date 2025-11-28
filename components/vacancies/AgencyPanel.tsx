@@ -120,11 +120,11 @@ export function AgencyPanel() {
                   variant="outline"
                   className="flex-1 border-[#D4A574] text-[#7A5C47] hover:bg-white rounded-full py-6 gap-2"
                   onClick={() => {
-                    window.location.href = 'mailto:hiring@banyahaven.com?subject=Заявка от агентства';
+                    window.location.href = 'mailto:griga58@yandex.ru?subject=Заявка от агентства';
                   }}
                 >
                   <Mail className="w-4 h-4" />
-                  Email: hiring@banyahaven.com
+                  Email: griga58@yandex.ru
                 </Button>
               </div>
 
@@ -169,10 +169,10 @@ export function AgencyPanel() {
                   <p className="text-xs text-[#7A5C47]/60 pt-4">
                     Или отправьте вложения на{' '}
                     <a 
-                      href="mailto:hiring@banyahaven.com?subject=Заявка%20от%20агентства%20%E2%80%94%20[Название%20агентства]"
+                      href="mailto:griga58@yandex.ru?subject=Заявка%20от%20агентства%20%E2%80%94%20[Название%20агентства]"
                       className="text-[#C69563] hover:underline"
                     >
-                      hiring@banyahaven.com
+                      griga58@yandex.ru
                     </a>
                     <br />
                     Тема: «Заявка от агентства — [Название вашего агентства]»

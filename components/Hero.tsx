@@ -13,13 +13,12 @@ export function Hero({ backgroundImage, onBookSession }: HeroProps) {
     <section id="home" className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Premium Gradient Overlay */}
       <div className="absolute inset-0">
-        <motion.img
-          initial={{ scale: 1.1, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 1.5, ease: 'easeOut' }}
+        <img
           src={backgroundImage}
           alt="Интерьер бани с паром"
           className="w-full h-full object-cover object-center"
+          loading="eager"
+          fetchPriority="high"
         />
         {/* Gradient overlay - bottom to top (black to transparent) for better text contrast */}
         <div 

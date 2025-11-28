@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
-import { Users, PartyPopper, Briefcase, Heart, Clock, UsersRound, Sparkles, Plus, Wine, Flower2, UtensilsCrossed, Gift } from 'lucide-react';
+import { Users, PartyPopper, Briefcase, Heart, Clock, UsersRound, Sparkles, Gift } from 'lucide-react';
 import { Button } from './ui/button';
 
 interface Package {
@@ -22,7 +22,6 @@ interface EventPackagesSectionProps {
 
 export function EventPackagesSection({ onRequestQuote }: EventPackagesSectionProps) {
   const [isVisible, setIsVisible] = useState(false);
-  const [showAddOns, setShowAddOns] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -122,30 +121,6 @@ export function EventPackagesSection({ onRequestQuote }: EventPackagesSectionPro
     },
   ];
 
-  const addOns = [
-    {
-      id: 'champagne',
-      name: 'Шампанское и напитки',
-      icon: <Wine className="w-5 h-5" />,
-      description: 'Премиум напитки и легкие закуски',
-      price: 'От 3 000 ₽',
-    },
-    {
-      id: 'massage',
-      name: 'Групповой массаж',
-      icon: <Flower2 className="w-5 h-5" />,
-      description: 'Профессиональный массаж для групп',
-      price: 'От 2 500 ₽/чел',
-    },
-    {
-      id: 'dining',
-      name: 'Приватный ужин',
-      icon: <UtensilsCrossed className="w-5 h-5" />,
-      description: 'Отдельная комната с гурмэ меню',
-      price: 'От 5 000 ₽',
-    },
-  ];
-
   const handleRequestQuote = (packageType: string) => {
     if (onRequestQuote) {
       onRequestQuote(packageType);
@@ -206,71 +181,6 @@ export function EventPackagesSection({ onRequestQuote }: EventPackagesSectionPro
             </motion.div>
           ))}
         </div>
-
-        {/* Add-ons Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-5xl mx-auto"
-        >
-          <button
-            onClick={() => setShowAddOns(!showAddOns)}
-            className="w-full flex items-center justify-between p-6 rounded-2xl bg-gradient-to-r from-white to-[#F5E6D3]/20 border border-[#D4AF37]/20 hover:border-[#D4AF37]/40 transition-all duration-300 group mb-4"
-          >
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#D4AF37]/20 to-[#F5E6D3]/40 flex items-center justify-center">
-                <Plus className={`w-5 h-5 text-[#D4AF37] transition-transform duration-300 ${showAddOns ? 'rotate-45' : ''}`} />
-              </div>
-              <div className="text-left">
-                <h3 className="text-[#3D3226]">Улучшите впечатления</h3>
-                <p className="text-sm text-[#3D3226]/60">Доступны дополнительные премиум-опции</p>
-              </div>
-            </div>
-            <motion.div
-              animate={{ rotate: showAddOns ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-              className="text-[#D4AF37]"
-            >
-              <Plus className="w-5 h-5" />
-            </motion.div>
-          </button>
-
-          <AnimatePresence>
-            {showAddOns && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.3 }}
-                className="overflow-hidden"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 p-6 rounded-2xl bg-white/50 border border-[#D4AF37]/10">
-                  {addOns.map((addon, index) => (
-                    <motion.div
-                      key={addon.id}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className="p-5 rounded-xl bg-white border border-[#F5E6D3] hover:border-[#D4AF37]/30 hover:shadow-lg transition-all duration-300 group"
-                    >
-                      <div className="flex items-start gap-3 mb-3">
-                        <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#D4AF37]/10 to-[#F5E6D3]/30 flex items-center justify-center text-[#D4AF37] group-hover:scale-110 transition-transform duration-300">
-                          {addon.icon}
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="text-[#3D3226] text-sm mb-1">{addon.name}</h4>
-                          <p className="text-xs text-[#3D3226]/60 mb-2">{addon.description}</p>
-                          <p className="text-sm text-[#D4AF37]">{addon.price}</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
 
         {/* Bottom CTA */}
         <motion.div

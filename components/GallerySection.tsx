@@ -5,10 +5,68 @@ import { useEffect, useState } from 'react';
 import { ImageAutoSlider } from './ui/image-auto-slider';
 import { GalleryModal } from './ui/gallery-modal';
 import { Image } from 'lucide-react';
+import { getOptimizedImagePaths } from './utils/imageUtils';
 
 export function GallerySection() {
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Full gallery - all images (original paths)
+  // Only include images that have optimized versions to avoid blank placeholders
+  // Изображения хранятся локально в папке public/images/gallery/
+  const originalGalleryImages = [
+    '/images/gallery/gallery-13.png',
+    '/images/gallery/gallery-22.png',
+    '/images/gallery/glavnaya.jpg',
+    '/images/gallery/Hall.JPG',
+    '/images/gallery/Hero Вертикально.JPG',
+    '/images/gallery/banya-na-drovah-4.jpg',
+    '/images/gallery/Банька на дровах.JPG',
+    '/images/gallery/Банька на дровах2.JPG',
+    '/images/gallery/Банька на дровах 4.JPG',
+    '/images/gallery/Банька на дровах 5.JPG',
+    '/images/gallery/Баня .JPG',
+    '/images/gallery/Баня 1.JPG',
+    '/images/gallery/Баня 3.JPG',
+    '/images/gallery/веники.JPG',
+    '/images/gallery/Вывеска Баня на грига .JPG',
+    '/images/gallery/Женское отделение.JPG',
+    '/images/gallery/Зона отдыха.JPG',
+    '/images/gallery/Печь.JPG',
+    '/images/gallery/Раздевалка.JPG',
+    '/images/gallery/Раздевалка 2.JPG',
+    '/images/gallery/Столы 2.JPG',
+    '/images/gallery/Табличка на входе.JPG',
+    '/images/gallery/Тройка  бассейн 2.JPG',
+    '/images/gallery/Тройка печь.JPG',
+    '/images/gallery/Тройка правильная.JPG',
+    '/images/gallery/тройка 3.JPG',
+    '/images/gallery/тройка 4.JPG',
+    '/images/gallery/тройка 5.JPG',
+    '/images/gallery/Холл 2.JPG',
+    '/images/gallery/холл.JPG',
+  ];
+
+  // Convert to optimized paths
+  const allGalleryImages = getOptimizedImagePaths(originalGalleryImages);
+
+  // Slider preview - only show best images for fast loading (original paths)
+  const originalSliderImages = [
+    '/images/gallery/Баня 1.JPG',
+    '/images/gallery/Баня 3.JPG',
+    '/images/gallery/glavnaya.jpg',
+    '/images/gallery/холл.JPG',
+    '/images/gallery/Зона отдыха.JPG',
+    '/images/gallery/Вывеска Баня на грига .JPG',
+    '/images/gallery/Печь.JPG',
+    '/images/gallery/Банька на дровах.JPG',
+    '/images/gallery/Раздевалка.JPG',
+    '/images/gallery/Столы 2.JPG',
+    '/images/gallery/Hall.JPG',
+  ];
+
+  // Convert to optimized paths
+  const sliderPreviewImages = getOptimizedImagePaths(originalSliderImages);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,87 +92,29 @@ export function GallerySection() {
     };
   }, []);
 
-  // Full gallery - all images
-  // Изображения хранятся локально в папке public/images/gallery/
-  const allGalleryImages = [
-    '/images/gallery/gallery-01.jpg',
-    '/images/gallery/gallery-02.jpg',
-    '/images/gallery/gallery-03.jpg',
-    '/images/gallery/gallery-04.jpg',
-    '/images/gallery/gallery-05.jpg',
-    '/images/gallery/gallery-06.jpg',
-    '/images/gallery/gallery-07.jpg',
-    '/images/gallery/gallery-08.jpg',
-    '/images/gallery/gallery-09.jpg',
-    '/images/gallery/gallery-10.jpg',
-    '/images/gallery/gallery-11.png',
-    '/images/gallery/gallery-12.png',
-    '/images/gallery/gallery-13.png',
-    '/images/gallery/gallery-14.png',
-    '/images/gallery/gallery-15.png',
-    '/images/gallery/gallery-16.png',
-    '/images/gallery/gallery-17.png',
-    '/images/gallery/gallery-18.png',
-    '/images/gallery/gallery-19.png',
-    '/images/gallery/gallery-20.png',
-    '/images/gallery/gallery-21.png',
-    '/images/gallery/gallery-22.png',
-    '/images/gallery/troika-7-hero.jpg',
-    '/images/gallery/troika-7.jpg',
-    '/images/gallery/Баня .JPG',
-    '/images/gallery/Баня 1.JPG',
-    '/images/gallery/Баня 2.JPG',
-    '/images/gallery/Баня 3.JPG',
-    '/images/gallery/Баня 4.JPG',
-    '/images/gallery/Женское отделение.JPG',
-    '/images/gallery/Женское.JPG',
-    '/images/gallery/Вывеска Баня на грига .JPG',
-    '/images/gallery/Раздевалка.JPG',
-    '/images/gallery/Раздевалка 2.JPG',
-    '/images/gallery/Табличка на входе.JPG',
-    '/images/gallery/Зона отдыха.JPG',
-    '/images/gallery/тройка.JPG',
-    '/images/gallery/тройка 2.JPG',
-    '/images/gallery/тройка 3.JPG',
-    '/images/gallery/тройка 4.JPG',
-    '/images/gallery/тройка 5.JPG',
-    '/images/gallery/тройка 6.JPG',
-    '/images/gallery/Холл 2.JPG',
-    '/images/gallery/холл.JPG',
-    '/images/gallery/Столы.JPG',
-    '/images/gallery/Столы 2.JPG',
-    '/images/gallery/столы 3.JPG',
-    '/images/gallery/бар.JPG',
-    '/images/gallery/веники.JPG',
-    '/images/gallery/Тройка печь.JPG',
-    '/images/gallery/Тройка 8.JPG',
-    '/images/gallery/Тройка  бассейн.JPG',
-    '/images/gallery/Тройка  бассейн 2.JPG',
-    '/images/gallery/Тройка 7 hero.JPG',
-    '/images/gallery/баня на верху.JPG',
-    '/images/gallery/Печь.JPG',
-    '/images/gallery/главная.JPG',
-    '/images/gallery/glavnaya.jpg',
-  ];
-
-  // Slider preview - only show best images for fast loading
-  const sliderPreviewImages = [
-    '/images/gallery/troika-7-hero.jpg',
-    '/images/gallery/gallery-01.jpg',
-    '/images/gallery/Баня 1.JPG',
-    '/images/gallery/gallery-04.jpg',
-    '/images/gallery/Баня 2.JPG',
-    '/images/gallery/gallery-06.jpg',
-    '/images/gallery/troika-7.jpg',
-    '/images/gallery/gallery-09.jpg',
-    '/images/gallery/Баня 3.JPG',
-    '/images/gallery/gallery-11.png',
-    '/images/gallery/Тройка  бассейн.JPG',
-    '/images/gallery/главная.JPG',
-    '/images/gallery/холл.JPG',
-    '/images/gallery/Зона отдыха.JPG',
-    '/images/gallery/бар.JPG',
-  ];
+  // Preload critical images (first 4 images from slider)
+  useEffect(() => {
+    if (isVisible && sliderPreviewImages.length > 0) {
+      const criticalImages = sliderPreviewImages.slice(0, 4);
+      criticalImages.forEach((imagePath) => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.as = 'image';
+        link.href = imagePath;
+        // Preload WebP version if available
+        const webpPath = imagePath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+        if (webpPath !== imagePath) {
+          const webpLink = document.createElement('link');
+          webpLink.rel = 'preload';
+          webpLink.as = 'image';
+          webpLink.type = 'image/webp';
+          webpLink.href = webpPath;
+          document.head.appendChild(webpLink);
+        }
+        document.head.appendChild(link);
+      });
+    }
+  }, [isVisible, sliderPreviewImages]);
 
   return (
     <section id="gallery" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-[#3D3226] via-[#2A2318] to-[#3D3226] relative overflow-hidden">

@@ -25,7 +25,7 @@ interface ContactSectionProps {
 export function ContactSection({ onBookSession }: ContactSectionProps) {
   const [copiedAddress, setCopiedAddress] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0); // 0 = map, 1 = parking photo
+  const [currentSlide, setCurrentSlide] = useState(0); // 0 = map, 1 = sign, 2 = parking photo
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const sectionRef = useRef<HTMLDivElement>(null);
   const autoPlayTimerRef = useRef<NodeJS.Timeout | null>(null);
@@ -71,7 +71,7 @@ export function ContactSection({ onBookSession }: ContactSectionProps) {
     if (!isAutoPlaying) return;
 
     autoPlayTimerRef.current = setInterval(() => {
-      setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+      setCurrentSlide((prev) => (prev === 2 ? 0 : prev + 1));
     }, 4500); // 4.5 seconds
 
     return () => {
@@ -205,6 +205,21 @@ export function ContactSection({ onBookSession }: ContactSectionProps) {
                         title="Расположение бани"
                       />
                     </motion.div>
+                  ) : currentSlide === 1 ? (
+                    <motion.div
+                      key="sign"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.8, ease: 'easeInOut' }}
+                      className="absolute inset-0"
+                    >
+                      <ImageWithFallback
+                        src="/images/gallery/Вывеска Баня на грига .JPG"
+                        alt="Вывеска Баня на Грига"
+                        className="w-full h-full object-cover"
+                      />
+                    </motion.div>
                   ) : (
                     <motion.div
                       key="parking"
@@ -215,7 +230,7 @@ export function ContactSection({ onBookSession }: ContactSectionProps) {
                       className="absolute inset-0"
                     >
                       <ImageWithFallback
-                        src="/images/gallery/Вывеска Баня на грига .JPG"
+                        src="/images/technical/parkovka.jpg"
                         alt="Парковка и территория"
                         className="w-full h-full object-cover"
                       />
@@ -239,6 +254,15 @@ export function ContactSection({ onBookSession }: ContactSectionProps) {
                   onClick={() => handleDotClick(1)}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     currentSlide === 1
+                      ? 'bg-white w-8'
+                      : 'bg-white/50 hover:bg-white/70'
+                  }`}
+                  aria-label="Показать вывеску"
+                />
+                <button
+                  onClick={() => handleDotClick(2)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    currentSlide === 2
                       ? 'bg-white w-8'
                       : 'bg-white/50 hover:bg-white/70'
                   }`}

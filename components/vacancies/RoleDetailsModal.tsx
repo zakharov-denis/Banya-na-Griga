@@ -32,10 +32,7 @@ export function RoleDetailsModal({ position, isOpen, onClose }: RoleDetailsModal
   const handleApplyNow = () => {
     onClose();
     setTimeout(() => {
-      const applySection = document.querySelector('#apply');
-      if (applySection) {
-        applySection.scrollIntoView({ behavior: 'smooth' });
-      }
+      window.location.href = 'mailto:griga58@yandex.ru?subject=Заявка на вакансию: ' + encodeURIComponent(position.title);
     }, 100);
   };
 
@@ -144,10 +141,10 @@ export function RoleDetailsModal({ position, isOpen, onClose }: RoleDetailsModal
               <p className="text-xs text-center text-[#7A5C47]/60">
                 Вопросы? Напишите нам на{' '}
                 <a 
-                  href="mailto:hiring@banyahaven.com" 
+                  href={`mailto:griga58@yandex.ru?subject=Вопрос о вакансии: ${encodeURIComponent(position.title)}`}
                   className="text-[#C69563] hover:underline"
                 >
-                  hiring@banyahaven.com
+                  griga58@yandex.ru
                 </a>
               </p>
             </div>

@@ -14,7 +14,6 @@ import { VacanciesPage } from '../components/VacanciesPage';
 import { BookingWidget } from '../components/booking/BookingWidget';
 import { AboutUsPage } from '../components/AboutUsPage';
 import { CookieConsent } from '../components/CookieConsent';
-import { EventPackagesSection } from '../components/EventPackagesSection';
 import { LegalDocuments } from '../components/LegalDocuments';
 import { PricingPage } from '../components/PricingPage';
 import { BlogsPage } from '../components/BlogsPage';
@@ -103,7 +102,6 @@ export default function App() {
           />
           <TrustSection />
           <Services onNavigateToPricing={() => setCurrentPage('pricing')} />
-          <EventPackagesSection onRequestQuote={handleRequestQuote} />
           <GallerySection />
           <GiftSection />
           <PromotionsSection onBookSession={handleBookSession} />

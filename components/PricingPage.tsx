@@ -40,15 +40,9 @@ export function PricingPage({ onNavigateToHome, onNavigateToHomeWithScroll, onBo
       description: 'Общее отделение для мужчин и женщин',
     },
     {
-      name: 'Пенсионеры и инвалиды (Ср и Чт)',
-      duration: '2 часа на человека',
-      price: '600',
-      description: 'Льготный вход',
-    },
-    {
       name: 'Пенсионеры и инвалиды (Пт–Вс)',
       duration: '2 часа на человека',
-      price: '800',
+      price: '1000',
       description: 'Льготный вход',
     },
     {

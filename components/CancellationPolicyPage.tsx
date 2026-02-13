@@ -487,7 +487,7 @@ export function CancellationPolicyPage({ onClose }: CancellationPolicyPageProps)
                     <Phone className="w-5 h-5 text-[#d8b272] mt-1 flex-shrink-0" />
                     <div>
                       <p className="text-[#3D3226]">Телефон:</p>
-                      <p className="text-[#705b36]">+7 (4012) 45-22-36, +7 (4012) 53-85-81</p>
+                      <p className="text-[#705b36]">+7 (4012) 45-22-36</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">

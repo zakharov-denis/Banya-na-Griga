@@ -73,8 +73,7 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
       title: 'Специальные тарифы',
       icon: '👥',
       services: [
-        { name: 'Пенсионеры и инвалиды (Ср–Чт)', price: '600 ₽', duration: '2 часа' },
-        { name: 'Пенсионеры и инвалиды (Пт–Вс)', price: '800 ₽', duration: '2 часа' },
+        { name: 'Пенсионеры и инвалиды (Пт–Вс)', price: '1000 ₽', duration: '2 часа' },
         { name: 'Дети (7–14 лет)', price: '200 ₽', duration: '2 часа' },
       ],
       image: 'https://images.unsplash.com/photo-1727169704910-0c60b67dd59e?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',

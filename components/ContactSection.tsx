@@ -32,7 +32,7 @@ export function ContactSection({ onBookSession }: ContactSectionProps) {
 
   const contactInfo = {
     address: 'улица Грига, 58, Калининград, Россия, 236016',
-    phones: ['+7 (4012) 45-22-36', '+7 (4012) 53-85-81'],
+    phones: ['+7 (4012) 45-22-36'],
     email: 'griga58@yandex.ru',
     hours: [
       { day: 'Понедельник - Вторник', time: 'Закрыто' },

@@ -85,6 +85,13 @@ export function PricingPage({ onNavigateToHome, onNavigateToHomeWithScroll, onBo
   const privateSaunas = [
     {
       type: 'Сауна с бассейном',
+      capacity: 'До 6 человек',
+      duration: '2 часа',
+      price: '2400',
+      available: true,
+    },
+    {
+      type: 'Сауна с бассейном',
       capacity: 'До 10 человек',
       duration: '2 часа',
       price: '5000',

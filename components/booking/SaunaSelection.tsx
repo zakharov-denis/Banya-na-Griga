@@ -20,7 +20,8 @@ interface SaunaSelectionProps {
 const saunas: Sauna[] = [
   { id: 1, name: 'Баня на дровах', type: 'Банная услуга', capacity: '2 часа - 2400 ₽', emoji: '🔥', color: '#D4A574' },
   { id: 2, name: 'Общая баня (муж/жен)', type: 'Банная услуга', capacity: 'С человека - 1000 ₽', emoji: '👥', color: '#7A5C47' },
-  { id: 3, name: 'Сауна с бассейном', type: 'Приватная сауна', capacity: 'До 10 человек - 5000 ₽', emoji: '💧', color: '#5B9FD5' },
+  { id: 3, name: 'Сауна с бассейном (до 6 чел)', type: 'Приватная сауна', capacity: '2 часа - 2400 ₽', emoji: '💧', color: '#5B9FD5' },
+  { id: 6, name: 'Сауна с бассейном (до 10 чел)', type: 'Приватная сауна', capacity: '2 часа - 5000 ₽', emoji: '💧', color: '#5B9FD5' },
   { id: 4, name: 'Сауна с ванной', type: 'Приватная сауна', capacity: 'До 3 человек - 2000 ₽', emoji: '🛁', color: '#CBA35A' },
   { id: 5, name: 'Компактная сауна', type: 'Приватная сауна', capacity: '3-4 человека - 1800 ₽', emoji: '🏠', color: '#8B7355' },
   { id: 7, name: 'Пенсионеры и инвалиды (Пт-Вс)', type: 'Специальный тариф', capacity: '2 часа - 1000 ₽', emoji: '🏷️', color: '#9C8775' },

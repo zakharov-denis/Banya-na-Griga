@@ -53,6 +53,7 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
       title: 'Сауны',
       icon: '🛁',
       services: [
+        { name: 'Сауна с бассейном (до 6 чел)', price: '2400 ₽', duration: '2 часа' },
         { name: 'Сауна с бассейном (до 10 чел)', price: '5000 ₽', duration: '2 часа' },
         { name: 'Сауна с купелью (до 3 чел)', price: '2000 ₽', duration: '2 часа' },
         { name: 'Компактная сауна (3–4 чел)', price: '1800 ₽', duration: '2 часа' },

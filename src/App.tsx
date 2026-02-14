@@ -13,7 +13,6 @@ import { Footer } from '../components/Footer';
 import { VacanciesPage } from '../components/VacanciesPage';
 import { BookingWidget } from '../components/booking/BookingWidget';
 import { AboutUsPage } from '../components/AboutUsPage';
-import { CookieConsent } from '../components/CookieConsent';
 import { LegalDocuments } from '../components/LegalDocuments';
 import { PricingPage } from '../components/PricingPage';
 import { BlogsPage } from '../components/BlogsPage';
@@ -169,9 +168,6 @@ export default function App() {
           setCurrentPage('cancellation');
         }}
       />
-
-      {/* Cookie Consent Banner */}
-      <CookieConsent />
 
       {/* Legal Documents Modal */}
       <LegalDocuments

@@ -42,7 +42,9 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
       icon: '🔥',
       services: [
         { name: 'Баня на дровах', price: '2400 ₽', duration: '2 часа' },
-        { name: 'Общая баня (муж/жен)', price: '800 ₽', duration: 'с человека' },
+        { name: 'Общая баня (муж/жен)', price: '1000 ₽', duration: 'с человека' },
+        { name: 'Общая баня СР', price: '600 ₽', duration: 'с человека' },
+        { name: 'Общая баня Чт с 10–14', price: '600 ₽', duration: 'с человека' },
         { name: 'Душ', price: '300 ₽', duration: 'за час' },
       ],
       image: '/images/technical/banya-pech.jpg',
@@ -51,7 +53,7 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
       title: 'Сауны',
       icon: '🛁',
       services: [
-        { name: 'Сауна с бассейном (до 6 чел)', price: '2400 ₽', duration: '2 часа' },
+        { name: 'Сауна с бассейном (до 10 чел)', price: '5000 ₽', duration: '2 часа' },
         { name: 'Сауна с купелью (до 3 чел)', price: '2000 ₽', duration: '2 часа' },
         { name: 'Компактная сауна (3–4 чел)', price: '1800 ₽', duration: '2 часа' },
       ],
@@ -68,15 +70,6 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
         { name: 'Аренда банной шапки', price: '100 ₽', duration: '' },
       ],
       image: '/images/technical/massazhnoe-kreslo.jpg',
-    },
-    {
-      title: 'Специальные тарифы',
-      icon: '👥',
-      services: [
-        { name: 'Пенсионеры и инвалиды (Пт–Вс)', price: '1000 ₽', duration: '2 часа' },
-        { name: 'Дети (7–14 лет)', price: '200 ₽', duration: '2 часа' },
-      ],
-      image: 'https://images.unsplash.com/photo-1727169704910-0c60b67dd59e?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     },
   ];
 
@@ -99,7 +92,7 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
         </motion.div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-10 lg:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10 lg:mb-12">
           {serviceCategories.map((category, index) => (
             <motion.div
               key={index}

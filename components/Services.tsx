@@ -45,6 +45,8 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
         { name: 'Общая баня (муж/жен)', price: '1000 ₽', duration: 'с человека' },
         { name: 'Общая баня СР', price: '600 ₽', duration: 'с человека' },
         { name: 'Общая баня Чт с 10–14', price: '600 ₽', duration: 'с человека' },
+        { name: 'Пенсионеры и инвалиды (Пт–Вс)', price: '1000 ₽', duration: '2 часа' },
+        { name: 'Дети (7–14 лет)', price: '200 ₽', duration: '2 часа' },
         { name: 'Душ', price: '300 ₽', duration: 'за час' },
       ],
       image: '/images/technical/banya-pech.jpg',

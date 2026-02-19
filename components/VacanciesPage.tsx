@@ -5,7 +5,6 @@ import { Header } from './Header';
 import { QuickStats } from './vacancies/QuickStats';
 import { OpenPositions } from './vacancies/OpenPositions';
 import { RoleDetailsModal } from './vacancies/RoleDetailsModal';
-import { InterviewTimeline } from './vacancies/InterviewTimeline';
 import { FooterCTA } from './vacancies/FooterCTA';
 import { Toaster } from './ui/sonner';
 
@@ -65,9 +64,6 @@ export function VacanciesPage({ onNavigateToHome, onNavigateToHomeWithScroll, on
 
       {/* Open Positions */}
       <OpenPositions onViewDetails={handleViewDetails} />
-
-      {/* Interview Timeline */}
-      <InterviewTimeline />
 
       {/* Footer CTA */}
       <FooterCTA />

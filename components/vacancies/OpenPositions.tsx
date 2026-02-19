@@ -298,25 +298,21 @@ export function OpenPositions() {
 
                   {/* Actions */}
                   <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-                    <Button
-                      onClick={() => {
-                        const subject = 'Отклик на вакансию: ' + position.title;
-                        const body = [
-                          'Здравствуйте,',
-                          '',
-                          'Откликаюсь на вакансию «' + position.title + '».',
-                          '',
-                          'ФИО:',
-                          'Телефон:',
-                          'Email:',
-                          'Кратко о себе:',
-                        ].join('\r\n');
-                        window.location.href = 'mailto:griga58@yandex.ru?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-                      }}
-                      className="flex-1 h-11 bg-gradient-to-r from-[#D4A574] to-[#C69563] hover:from-[#C69563] hover:to-[#B8865A] text-white rounded-full transition-all duration-200"
+                    <a
+                      href={
+                        'mailto:griga58@yandex.ru?subject=' +
+                        encodeURIComponent('Отклик на вакансию: ' + position.title) +
+                        '&body=' +
+                        encodeURIComponent(
+                          'Здравствуйте,\r\n\r\nОткликаюсь на вакансию «' +
+                            position.title +
+                            '».\r\n\r\nФИО:\r\nТелефон:\r\nEmail:\r\nКратко о себе:'
+                        )
+                      }
+                      className="flex-1 h-11 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#D4A574] to-[#C69563] hover:from-[#C69563] hover:to-[#B8865A] text-white transition-all duration-200 font-medium cursor-pointer"
                     >
                       Быстрая подача
-                    </Button>
+                    </a>
                   </div>
                 </div>
               </Card>

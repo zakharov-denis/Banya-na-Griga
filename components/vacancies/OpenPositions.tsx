@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Badge } from '../ui/badge';
 import { ToggleGroup, ToggleGroupItem } from '../ui/toggle-group';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
-import { Search, Grid2x2, List, MapPin, Clock, ExternalLink } from 'lucide-react';
+import { Search, Grid2x2, List, MapPin, Clock } from 'lucide-react';
 
 const positions = [
   {
@@ -60,11 +60,7 @@ const positions = [
   },
 ];
 
-interface OpenPositionsProps {
-  onViewDetails: (position: typeof positions[0]) => void;
-}
-
-export function OpenPositions({ onViewDetails }: OpenPositionsProps) {
+export function OpenPositions() {
   // Determine initial view based on screen size and localStorage
   const getInitialView = (): 'grid' | 'list' => {
     // Check localStorage first
@@ -304,19 +300,22 @@ export function OpenPositions({ onViewDetails }: OpenPositionsProps) {
                   <div className="flex flex-col sm:flex-row gap-3 mt-auto">
                     <Button
                       onClick={() => {
-                        window.location.href = 'mailto:griga58@yandex.ru?subject=Заявка на вакансию: ' + encodeURIComponent(position.title);
+                        const subject = 'Отклик на вакансию: ' + position.title;
+                        const body = [
+                          'Здравствуйте,',
+                          '',
+                          'Откликаюсь на вакансию «' + position.title + '».',
+                          '',
+                          'ФИО:',
+                          'Телефон:',
+                          'Email:',
+                          'Кратко о себе:',
+                        ].join('\r\n');
+                        window.location.href = 'mailto:griga58@yandex.ru?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
                       }}
                       className="flex-1 h-11 bg-gradient-to-r from-[#D4A574] to-[#C69563] hover:from-[#C69563] hover:to-[#B8865A] text-white rounded-full transition-all duration-200"
                     >
                       Быстрая подача
-                    </Button>
-                    <Button
-                      onClick={() => onViewDetails(position)}
-                      variant="outline"
-                      className="flex-1 h-11 border-[#D4A574] text-[#7A5C47] hover:bg-[#D4A574]/10 rounded-full inline-flex items-center justify-center gap-2 transition-all duration-200"
-                    >
-                      Подробности
-                      <ExternalLink className="w-3 h-3" />
                     </Button>
                   </div>
                 </div>

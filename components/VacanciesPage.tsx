@@ -5,7 +5,6 @@ import { Header } from './Header';
 import { QuickStats } from './vacancies/QuickStats';
 import { OpenPositions } from './vacancies/OpenPositions';
 import { RoleDetailsModal } from './vacancies/RoleDetailsModal';
-import { AgencyPanel } from './vacancies/AgencyPanel';
 import { InterviewTimeline } from './vacancies/InterviewTimeline';
 import { FooterCTA } from './vacancies/FooterCTA';
 import { Toaster } from './ui/sonner';
@@ -66,9 +65,6 @@ export function VacanciesPage({ onNavigateToHome, onNavigateToHomeWithScroll, on
 
       {/* Open Positions */}
       <OpenPositions onViewDetails={handleViewDetails} />
-
-      {/* Agency Panel */}
-      <AgencyPanel />
 
       {/* Interview Timeline */}
       <InterviewTimeline />

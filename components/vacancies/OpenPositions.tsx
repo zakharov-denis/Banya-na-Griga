@@ -309,7 +309,9 @@ export function OpenPositions() {
                             '».\r\n\r\nФИО:\r\nТелефон:\r\nEmail:\r\nКратко о себе:'
                         )
                       }
-                      className="flex-1 h-11 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#D4A574] to-[#C69563] hover:from-[#C69563] hover:to-[#B8865A] text-white transition-all duration-200 font-medium cursor-pointer"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 h-11 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#D4A574] to-[#C69563] hover:from-[#C69563] hover:to-[#B8865A] text-white transition-all duration-200 font-medium cursor-pointer visited:text-white visited:from-[#D4A574] visited:to-[#C69563]"
                     >
                       Быстрая подача
                     </a>

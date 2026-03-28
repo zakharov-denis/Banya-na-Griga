@@ -43,20 +43,26 @@ export function PricingSection({ onBookNow }: PricingSectionProps) {
     },
     {
       name: 'Общая баня (мужское/женское отделение)',
-      duration: '2 часа на человека',
-      price: '800',
+      duration: 'с человека',
+      price: '1000',
       description: 'Общее отделение для мужчин и женщин',
     },
     {
-      name: 'Пенсионеры и инвалиды (Ср и Чт)',
-      duration: '2 часа на человека',
+      name: 'Общая баня СР',
+      duration: 'с человека',
       price: '600',
-      description: 'Льготный вход',
+      description: 'Среда',
+    },
+    {
+      name: 'Общая баня Чт с 10–14',
+      duration: 'с человека',
+      price: '600',
+      description: 'Четверг с 10:00 до 14:00',
     },
     {
       name: 'Пенсионеры и инвалиды (Пт–Вс)',
       duration: '2 часа на человека',
-      price: '800',
+      price: '1000',
       description: 'Льготный вход',
     },
     {
@@ -90,6 +96,13 @@ export function PricingSection({ onBookNow }: PricingSectionProps) {
       capacity: 'До 6 человек',
       duration: '2 часа',
       price: '2400',
+      available: true,
+    },
+    {
+      type: 'Сауна с бассейном',
+      capacity: 'До 10 человек',
+      duration: '2 часа',
+      price: '5000',
       available: true,
     },
     {

@@ -9,7 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Badge } from '../ui/badge';
 import { ToggleGroup, ToggleGroupItem } from '../ui/toggle-group';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
-import { Search, Grid2x2, List, MapPin, Clock, ExternalLink } from 'lucide-react';
+import { Search, Grid2x2, List, MapPin, Clock } from 'lucide-react';
 
 const positions = [
   {
@@ -60,11 +60,7 @@ const positions = [
   },
 ];
 
-interface OpenPositionsProps {
-  onViewDetails: (position: typeof positions[0]) => void;
-}
-
-export function OpenPositions({ onViewDetails }: OpenPositionsProps) {
+export function OpenPositions() {
   // Determine initial view based on screen size and localStorage
   const getInitialView = (): 'grid' | 'list' => {
     // Check localStorage first
@@ -302,22 +298,23 @@ export function OpenPositions({ onViewDetails }: OpenPositionsProps) {
 
                   {/* Actions */}
                   <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-                    <Button
-                      onClick={() => {
-                        window.location.href = 'mailto:griga58@yandex.ru?subject=Заявка на вакансию: ' + encodeURIComponent(position.title);
-                      }}
-                      className="flex-1 h-11 bg-gradient-to-r from-[#D4A574] to-[#C69563] hover:from-[#C69563] hover:to-[#B8865A] text-white rounded-full transition-all duration-200"
+                    <a
+                      href={
+                        'mailto:griga58@yandex.ru?subject=' +
+                        encodeURIComponent('Отклик на вакансию: ' + position.title) +
+                        '&body=' +
+                        encodeURIComponent(
+                          'Здравствуйте,\r\n\r\nОткликаюсь на вакансию «' +
+                            position.title +
+                            '».\r\n\r\nФИО:\r\nТелефон:\r\nEmail:\r\nКратко о себе:'
+                        )
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 h-11 inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#D4A574] to-[#C69563] hover:from-[#C69563] hover:to-[#B8865A] text-white transition-all duration-200 font-medium cursor-pointer visited:text-white visited:from-[#D4A574] visited:to-[#C69563]"
                     >
                       Быстрая подача
-                    </Button>
-                    <Button
-                      onClick={() => onViewDetails(position)}
-                      variant="outline"
-                      className="flex-1 h-11 border-[#D4A574] text-[#7A5C47] hover:bg-[#D4A574]/10 rounded-full inline-flex items-center justify-center gap-2 transition-all duration-200"
-                    >
-                      Подробности
-                      <ExternalLink className="w-3 h-3" />
-                    </Button>
+                    </a>
                   </div>
                 </div>
               </Card>

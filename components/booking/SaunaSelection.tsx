@@ -19,12 +19,12 @@ interface SaunaSelectionProps {
 
 const saunas: Sauna[] = [
   { id: 1, name: 'Баня на дровах', type: 'Банная услуга', capacity: '2 часа - 2400 ₽', emoji: '🔥', color: '#D4A574' },
-  { id: 2, name: 'Общая баня (муж/жен)', type: 'Банная услуга', capacity: 'С человека - 800 ₽', emoji: '👥', color: '#7A5C47' },
-  { id: 3, name: 'Сауна с бассейном', type: 'Приватная сауна', capacity: 'До 6 человек - 2400 ₽', emoji: '💧', color: '#5B9FD5' },
+  { id: 2, name: 'Общая баня (муж/жен)', type: 'Банная услуга', capacity: 'С человека - 1000 ₽', emoji: '👥', color: '#7A5C47' },
+  { id: 3, name: 'Сауна с бассейном (до 6 чел)', type: 'Приватная сауна', capacity: '2 часа - 2400 ₽', emoji: '💧', color: '#5B9FD5' },
+  { id: 6, name: 'Сауна с бассейном (до 10 чел)', type: 'Приватная сауна', capacity: '2 часа - 5000 ₽', emoji: '💧', color: '#5B9FD5' },
   { id: 4, name: 'Сауна с ванной', type: 'Приватная сауна', capacity: 'До 3 человек - 2000 ₽', emoji: '🛁', color: '#CBA35A' },
   { id: 5, name: 'Компактная сауна', type: 'Приватная сауна', capacity: '3-4 человека - 1800 ₽', emoji: '🏠', color: '#8B7355' },
-  { id: 6, name: 'Пенсионеры и инвалиды (Ср-Чт)', type: 'Специальный тариф', capacity: '2 часа - 600 ₽', emoji: '🎫', color: '#A0826D' },
-  { id: 7, name: 'Пенсионеры и инвалиды (Пт-Вс)', type: 'Специальный тариф', capacity: '2 часа - 800 ₽', emoji: '🏷️', color: '#9C8775' },
+  { id: 7, name: 'Пенсионеры и инвалиды (Пт-Вс)', type: 'Специальный тариф', capacity: '2 часа - 1000 ₽', emoji: '🏷️', color: '#9C8775' },
   { id: 8, name: 'Дети (7-14 лет)', type: 'Специальный тариф', capacity: '2 часа - 200 ₽', emoji: '👶', color: '#B8A490' },
   { id: 9, name: 'Душ', type: 'Услуги душа', capacity: '1 час - 300 ₽', emoji: '🚿', color: '#6BA3C4' },
   { id: 10, name: 'Душ для пенсионеров и детей', type: 'Услуги душа', capacity: '1 час - 200 ₽', emoji: '🧴', color: '#7DB4D8' },

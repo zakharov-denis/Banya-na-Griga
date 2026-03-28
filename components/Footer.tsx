@@ -112,12 +112,6 @@ export function Footer({ onNavigateToCareers, onOpenLegalDoc, onOpenCancellation
                     >
                       +7 (4012) 45-22-36
                     </a>
-                    <a
-                      href="tel:+74012538581"
-                      className="text-[#E8DFD5] hover:text-[#D4A574] transition-colors text-sm sm:text-base"
-                    >
-                      +7 (4012) 53-85-81
-                    </a>
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">

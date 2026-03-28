@@ -1,0 +1,2 @@
+[   20363ms] [ERROR] Failed to load resource: net::ERR_TIMED_OUT @ https://play.google.com/log?format=json&hasfast=true:0
+[   22744ms] [WARNING] <meta name="apple-mobile-web-app-capable" content="yes"> is deprecated. Please include <meta name="mobile-web-app-capable" content="yes"> @ https://seller.wildberries.ru/:0

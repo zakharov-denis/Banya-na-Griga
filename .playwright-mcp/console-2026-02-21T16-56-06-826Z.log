@@ -1,0 +1,64 @@
+[    8133ms] [ERROR] Warning: React does not recognize the `%s` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `%s` instead. If you accidentally passed it from a parent component, remove it from the DOM element.%s fetchPriority fetchpriority 
+    at img
+    at div
+    at section
+    at Hero (http://localhost:3000/components/Hero.tsx:20:24)
+    at div
+    at App (http://localhost:3000/src/App.tsx:43:41) @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:520
+[    8160ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8160ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Баня" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8160ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8160ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Баня" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8162ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8162ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Зона" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8162ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8162ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Вывеска" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8163ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8163ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Банька" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8163ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8164ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Столы" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8164ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8164ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Баня" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8165ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8165ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Баня" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8167ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8167ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Зона" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8167ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8167ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Вывеска" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8168ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8168ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Банька" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8169ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8169ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Столы" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8388
+[    8243ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8243ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Баня" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8243ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Баня" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Зона" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Вывеска" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Банька" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Столы" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Баня" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8244ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8245ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Баня" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8245ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8245ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Зона" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8245ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8245ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Вывеска" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8245ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8245ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Банька" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8245ms] [WARNING] Failed parsing 'srcset' attribute value since it has an unknown descriptor. @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    8245ms] [WARNING] Dropped srcset candidate "/images/gallery/optimized/Столы" @ http://localhost:3000/node_modules/.vite/deps/chunk-NXESFFTV.js?v=0183edb8:8458
+[    9088ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://firebase.googleapis.com/v1alpha/projects/-/apps/1:415000304963:web:8d5104ed4fd1b3c0d723f6/webConfig:0
+[    9092ms] [WARNING] [2026-02-21T16:56:15.917Z]  @firebase/analytics: Failed to fetch this Firebase app's measurement ID from the server. Falling back to the measurement ID G-CVQ9LV68CR provided in the "measurementId" field in the local Firebase config. [Analytics: Dynamic config fetch failed: [404] App not found. App [1:415000304963:web:8d5104ed4fd1b3c0d723f6] (analytics/config-fetch-failed).] @ http://localhost:3000/node_modules/.vite/deps/chunk-ULY5W2ME.js?v=0183edb8:792
+[   20558ms] [WARNING] You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour. @ http://localhost:3000/node_modules/.vite/deps/motion_react.js?v=0183edb8:251
+[   20558ms] [WARNING] You're attempting to animate multiple children within AnimatePresence, but its mode is set to "wait". This will lead to odd visual behaviour. @ http://localhost:3000/node_modules/.vite/deps/motion_react.js?v=0183edb8:251
+[   38610ms] [ERROR] Failed to load resource: net::ERR_TIMED_OUT @ https://images.unsplash.com/photo-1739869451056-a8cf6d396452?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3aW50ZXIlMjBzYXVuYSUyMHNub3d8ZW58MXx8fHwxNzYyMDIzMTQ0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral:0
+[   38612ms] [ERROR] Failed to load resource: net::ERR_TIMED_OUT @ https://images.unsplash.com/photo-1749561532365-1d60917caf1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzYXVuYSUyMHJlbGF4YXRpb24lMjBsaW5lJTIwYXJ0fGVufDF8fHx8MTc2MjAxMzMwOHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral:0
+[   44563ms] [ERROR] Failed to load resource: net::ERR_TIMED_OUT @ https://i.ibb.co/JWJ913Vb/5204071771186266480-removebg-preview.png:0
+[   44564ms] [ERROR] Failed to load resource: net::ERR_TIMED_OUT @ https://i.ibb.co/JWJ913Vb/5204071771186266480-removebg-preview.png:0
+[   44564ms] [ERROR] Failed to load resource: net::ERR_TIMED_OUT @ https://i.ibb.co/JWJ913Vb/5204071771186266480-removebg-preview.png:0

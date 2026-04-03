@@ -9,17 +9,24 @@ interface HeroProps {
 }
 
 export function Hero({ backgroundImage, onBookSession }: HeroProps) {
+  const webpBackgroundImage = backgroundImage.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+
   return (
     <section id="home" className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Premium Gradient Overlay */}
       <div className="absolute inset-0">
-        <img
-          src={backgroundImage}
-          alt="Интерьер бани с паром"
-          className="w-full h-full object-cover object-center"
-          loading="eager"
-          fetchPriority="high"
-        />
+        <picture className="block w-full h-full">
+          <source srcSet={webpBackgroundImage} type="image/webp" />
+          <img
+            src={backgroundImage}
+            alt="Интерьер бани с паром"
+            className="w-full h-full object-cover object-center"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+            sizes="100vw"
+          />
+        </picture>
         {/* Gradient overlay - bottom to top (black to transparent) for better text contrast */}
         <div 
           className="absolute inset-0" 

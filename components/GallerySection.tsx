@@ -92,30 +92,6 @@ export function GallerySection() {
     };
   }, []);
 
-  // Preload critical images (first 4 images from slider)
-  useEffect(() => {
-    if (isVisible && sliderPreviewImages.length > 0) {
-      const criticalImages = sliderPreviewImages.slice(0, 4);
-      criticalImages.forEach((imagePath) => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = imagePath;
-        // Preload WebP version if available
-        const webpPath = imagePath.replace(/\.(jpg|jpeg|png)$/i, '.webp');
-        if (webpPath !== imagePath) {
-          const webpLink = document.createElement('link');
-          webpLink.rel = 'preload';
-          webpLink.as = 'image';
-          webpLink.type = 'image/webp';
-          webpLink.href = webpPath;
-          document.head.appendChild(webpLink);
-        }
-        document.head.appendChild(link);
-      });
-    }
-  }, [isVisible, sliderPreviewImages]);
-
   return (
     <section id="gallery" className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-[#3D3226] via-[#2A2318] to-[#3D3226] relative overflow-hidden">
       {/* Background decorative elements */}
@@ -146,15 +122,17 @@ export function GallerySection() {
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <ImageAutoSlider
-            images={sliderPreviewImages}
-            speed={30}
-            imageSize={{
-              mobile: 'w-56 h-56',
-              tablet: 'md:w-72 md:h-72',
-              desktop: 'lg:w-80 lg:h-80'
-            }}
-          />
+          {isVisible && (
+            <ImageAutoSlider
+              images={sliderPreviewImages}
+              speed={30}
+              imageSize={{
+                mobile: 'w-56 h-56',
+                tablet: 'md:w-72 md:h-72',
+                desktop: 'lg:w-80 lg:h-80'
+              }}
+            />
+          )}
         </motion.div>
 
         {/* See More Button */}

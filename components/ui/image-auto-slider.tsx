@@ -94,8 +94,8 @@ export const ImageAutoSlider: React.FC<ImageAutoSliderProps> = ({
                     src={image}
                     alt={`Gallery image ${(index % images.length) + 1}`}
                     className="w-full h-full object-cover"
-                    loading={index < 4 ? "eager" : "lazy"}
-                    priority={index < 2}
+                    loading="lazy"
+                    priority={false}
                   />
                 </div>
               ))}

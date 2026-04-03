@@ -96,7 +96,7 @@ export default function App() {
             currentPage={currentPage}
           />
           <Hero
-            backgroundImage="/images/gallery/glavnaya.jpg"
+            backgroundImage="/images/gallery/optimized/glavnaya_opt.jpg"
             onBookSession={handleBookSession}
           />
           <TrustSection />

@@ -71,7 +71,7 @@ export function FooterCTA() {
             <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-4 p-4 sm:p-6 bg-white/80 backdrop-blur-sm rounded-2xl border border-[#E8DFD5]">
               <Mail className="w-5 h-5 text-[#C69563]" />
               <div className="text-center sm:text-left">
-                <p className="text-sm text-[#7A5C47]/70 mb-1">Для агентств и массовых заявок</p>
+                <p className="text-sm text-[#7A5C47]/70 mb-1">Для прямой коммуникации</p>
                 <a 
                   href="mailto:griga58@yandex.ru?subject=Заявка от агентства" 
                   className="text-[#C69563] hover:underline"

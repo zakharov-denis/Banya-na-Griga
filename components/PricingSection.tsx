@@ -44,20 +44,9 @@ export function PricingSection({ onBookNow }: PricingSectionProps) {
     {
       name: 'Общая баня (мужское/женское отделение)',
       duration: 'с человека',
-      price: '1000',
+      price: '600',
       description: 'Общее отделение для мужчин и женщин',
-    },
-    {
-      name: 'Общая баня СР',
-      duration: 'с человека',
-      price: '600',
-      description: 'Среда',
-    },
-    {
-      name: 'Общая баня Чт с 10–14',
-      duration: 'с человека',
-      price: '600',
-      description: 'Четверг с 10:00 до 14:00',
+      note: 'Промо: среда, четверг 10:00-14:00 — 600 ₽',
     },
     {
       name: 'Пенсионеры и инвалиды (Пт–Вс)',
@@ -93,16 +82,16 @@ export function PricingSection({ onBookNow }: PricingSectionProps) {
   const privateSaunas = [
     {
       type: 'Сауна с бассейном',
-      capacity: 'До 6 человек',
+      capacity: 'До 10 человек',
       duration: '2 часа',
-      price: '2400',
+      price: '5000',
       available: true,
     },
     {
       type: 'Сауна с бассейном',
-      capacity: 'До 10 человек',
+      capacity: 'До 6 человек',
       duration: '2 часа',
-      price: '5000',
+      price: '2400',
       available: true,
     },
     {
@@ -182,7 +171,14 @@ export function PricingSection({ onBookNow }: PricingSectionProps) {
                     key={index}
                     className="border-b border-[#E8DFD5] hover:bg-[#FAF7F2] transition-colors"
                   >
-                    <td className="px-6 py-5 text-[#3D3226]">{service.name}</td>
+                    <td className="px-6 py-5 text-[#3D3226]">
+                      <div>{service.name}</div>
+                      {service.note && (
+                        <p className="mt-1 text-sm font-medium bg-gradient-to-r from-[#B8893A]/80 via-[#E7C48F]/95 to-[#B8893A]/80 bg-clip-text text-transparent">
+                          {service.note}
+                        </p>
+                      )}
+                    </td>
                     <td className="px-6 py-5 text-center text-[#7A5C47]">{service.duration}</td>
                     <td className="px-6 py-5 text-center">
                       <span className="text-[#CBA35A]">{service.price} ₽</span>
@@ -196,16 +192,21 @@ export function PricingSection({ onBookNow }: PricingSectionProps) {
           {/* Mobile Cards */}
           <div className="md:hidden space-y-4">
             {mainServices.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-6 shadow-lg border border-[#E8DFD5]"
-              >
-                <h4 className="text-[#3D3226] mb-3">{service.name}</h4>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <p className="text-sm text-[#7A5C47]">Длительность</p>
-                    <p className="text-[#3D3226]">{service.duration}</p>
-                  </div>
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl p-6 shadow-lg border border-[#E8DFD5]"
+                >
+                  <h4 className="text-[#3D3226] mb-3">{service.name}</h4>
+                  {service.note && (
+                    <p className="mb-3 text-sm leading-relaxed font-medium bg-gradient-to-r from-[#B8893A]/80 via-[#E7C48F]/95 to-[#B8893A]/80 bg-clip-text text-transparent">
+                      {service.note}
+                    </p>
+                  )}
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <p className="text-sm text-[#7A5C47]">Длительность</p>
+                      <p className="text-[#3D3226]">{service.duration}</p>
+                    </div>
                   <div className="text-right">
                     <p className="text-sm text-[#7A5C47] mb-1">Цена</p>
                     <p className="text-[#CBA35A]">{service.price} ₽</p>

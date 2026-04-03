@@ -1,10 +1,10 @@
-# 👨‍💻 Developer Handover Documentation - Banya Haven
+# 👨‍💻 Developer Handover Documentation - Banya na Griga 58
 
 Complete guide for developers taking over this project.
 
 ## 📖 Project Overview
 
-**Project Name:** Banya Haven - Russian Banya Website  
+**Project Name:** Banya na Griga 58 - Russian Banya Website  
 **Location:** Kaliningrad, Russia  
 **Language:** Russian (Cyrillic)  
 **Purpose:** Premium spa/banya booking and information website
@@ -447,4 +447,4 @@ Update URL in `/components/ui/tubelight-navbar.tsx` and `index.html`
 
 ---
 
-**Welcome to the Banya Haven project! If you have questions, refer to this document first. Good luck! 🎉**
+**Welcome to the Banya na Griga 58 project! If you have questions, refer to this document first. Good luck! 🎉**

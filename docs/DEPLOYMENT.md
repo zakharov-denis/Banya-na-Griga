@@ -1,6 +1,6 @@
-# 🚀 Deployment Guide - Banya Haven
+# 🚀 Deployment Guide - Banya na Griga 58
 
-Complete guide for deploying the Banya Haven website to production.
+Complete guide for deploying the Banya na Griga 58 website to production.
 
 ## 📋 Pre-Deployment Checklist
 

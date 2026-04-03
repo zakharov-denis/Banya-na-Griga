@@ -294,7 +294,7 @@ export function ApplicationForm() {
               Заявка получена!
             </DialogTitle>
             <DialogDescription className="text-base text-[#7A5C47] leading-relaxed">
-              Спасибо за ваш интерес к присоединению к Баня Хейвен. Наша команда по найму рассмотрит вашу заявку и свяжется с вами в течение 5 рабочих дней.
+              Спасибо за ваш интерес к присоединению к Баня на Грига 58. Наша команда по найму рассмотрит вашу заявку и свяжется с вами в течение 5 рабочих дней.
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 pt-4">

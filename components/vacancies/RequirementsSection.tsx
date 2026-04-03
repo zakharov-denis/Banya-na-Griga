@@ -95,7 +95,7 @@ export function RequirementsSection() {
   };
 
   const downloadAllQuestions = () => {
-    let allText = 'Баня Хейвен - Вопросы для собеседования\n\n';
+    let allText = 'Баня на Грига 58 - Вопросы для собеседования\n\n';
     Object.entries(interviewQuestions).forEach(([category, questions]) => {
       allText += `${category}\n${'-'.repeat(category.length)}\n`;
       questions.forEach((q, i) => {

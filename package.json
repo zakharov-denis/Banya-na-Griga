@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "description": "Banya Haven - Premium Russian Banya in Kaliningrad",
-  "author": "Banya Haven",
+  "description": "Banya na Griga 58 - Premium Russian Banya in Kaliningrad",
+  "author": "Banya na Griga 58",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

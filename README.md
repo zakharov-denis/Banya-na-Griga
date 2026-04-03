@@ -1,4 +1,4 @@
-# Banya Haven - Русская Баня в Калининграде
+# Banya na Griga 58 - Русская Баня в Калининграде
 
 Premium Russian Banya website built with React, TypeScript, and Tailwind CSS.
 
@@ -143,9 +143,8 @@ For questions or support regarding this project, please contact the development 
 
 ## 📄 License
 
-This project is proprietary and confidential. All rights reserved by Banya Haven.
+This project is proprietary and confidential. All rights reserved by Banya na Griga 58.
 
 ---
 
-**Built with ❤️ for Banya Haven**
-
+**Built with ❤️ for Banya na Griga 58**

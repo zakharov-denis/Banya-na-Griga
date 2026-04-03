@@ -119,7 +119,7 @@ export function BrandStorySection({ onLearnMore }: BrandStorySectionProps) {
             {/* Body Text */}
             <div className="space-y-3 sm:space-y-4 text-[#8B7761] text-base sm:text-lg leading-relaxed">
               <p>
-                Banya Haven began with a simple goal — to bring the age-old sauna culture into today's fast-paced world.
+                Banya na Griga 58 began with a simple goal — to bring the age-old sauna culture into today's fast-paced world.
               </p>
               <p>
                 Inspired by the rituals of Finnish and Russian banyas, our space was designed to help people reconnect with their bodies, find stillness, and heal through warmth.

@@ -42,9 +42,12 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
       icon: '🔥',
       services: [
         { name: 'Баня на дровах', price: '2400 ₽', duration: '2 часа' },
-        { name: 'Общая баня (муж/жен)', price: '1000 ₽', duration: 'с человека' },
-        { name: 'Общая баня СР', price: '600 ₽', duration: 'с человека' },
-        { name: 'Общая баня Чт с 10–14', price: '600 ₽', duration: 'с человека' },
+        {
+          name: 'Общая баня (муж/жен)',
+          price: '600 ₽',
+          duration: 'промо-тариф',
+          note: 'Промо: среда, четверг 10:00-14:00 — 600 ₽',
+        },
         { name: 'Пенсионеры и инвалиды (Пт–Вс)', price: '1000 ₽', duration: '2 часа' },
         { name: 'Дети (7–14 лет)', price: '200 ₽', duration: '2 часа' },
         { name: 'Душ', price: '300 ₽', duration: 'за час' },
@@ -55,8 +58,8 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
       title: 'Сауны',
       icon: '🛁',
       services: [
-        { name: 'Сауна с бассейном (до 6 чел)', price: '2400 ₽', duration: '2 часа' },
         { name: 'Сауна с бассейном (до 10 чел)', price: '5000 ₽', duration: '2 часа' },
+        { name: 'Сауна с бассейном (до 6 чел)', price: '2400 ₽', duration: '2 часа' },
         { name: 'Сауна с купелью (до 3 чел)', price: '2000 ₽', duration: '2 часа' },
         { name: 'Компактная сауна (3–4 чел)', price: '1800 ₽', duration: '2 часа' },
       ],
@@ -134,6 +137,11 @@ export function Services({ onNavigateToPricing }: ServicesProps) {
                           </div>
                           {service.duration && (
                             <span className="text-xs text-[#8B7761]/60">{service.duration}</span>
+                          )}
+                          {service.note && (
+                            <p className="mt-1 text-xs leading-relaxed font-medium bg-gradient-to-r from-[#B8893A]/80 via-[#E7C48F]/95 to-[#B8893A]/80 bg-clip-text text-transparent">
+                              {service.note}
+                            </p>
                           )}
                         </div>
                       </li>

@@ -5,7 +5,7 @@
 
 set -e  # Exit on error
 
-echo "🚀 Banya Haven - Firebase Deployment Setup"
+echo "🚀 Banya na Griga 58 - Firebase Deployment Setup"
 echo "=========================================="
 echo ""
 
@@ -64,4 +64,3 @@ echo "2. Run: npm run build"
 echo "3. Run: firebase login"
 echo "4. Run: firebase deploy --only hosting"
 echo ""
-
